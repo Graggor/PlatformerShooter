@@ -1,0 +1,84 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Characters/Enemies/Enemy.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Characters/Player/enemygroter.png" type="Texture" id=2]
+[ext_resource path="res://Items/Weapons/Pistol.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Characters/Emote.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Items/Weapons/HurtBox.gd" type="Script" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 8.5, 15.5 )
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 140.0
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 8.5, 15.5 )
+
+[node name="Enemy" type="KinematicBody2D"]
+script = ExtResource( 1 )
+detection_radius = 200
+patrols = true
+chases = true
+
+[node name="Body" type="Sprite" parent="."]
+position = Vector2( 4, 1 )
+texture = ExtResource( 2 )
+
+[node name="LedgeDetector" type="RayCast2D" parent="Body"]
+position = Vector2( 8, 15 )
+enabled = true
+cast_to = Vector2( 0, 10 )
+
+[node name="WallDetector" type="RayCast2D" parent="Body"]
+position = Vector2( 7, -6 )
+enabled = true
+cast_to = Vector2( 2, 0 )
+
+[node name="Hand" type="Node2D" parent="Body"]
+position = Vector2( 7, 2 )
+
+[node name="Pistol" parent="Body/Hand" instance=ExtResource( 3 )]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 1.5, 1.5 )
+shape = SubResource( 1 )
+
+[node name="DetectionSphere" type="Area2D" parent="." groups=["enemy"]]
+visible = false
+collision_layer = 0
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionSphere"]
+shape = SubResource( 2 )
+
+[node name="PlayerVisibility" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( 0, 200 )
+
+[node name="ShotTimer" type="Timer" parent="."]
+wait_time = 0.6
+one_shot = true
+
+[node name="Label" type="Label" parent="."]
+visible = false
+margin_left = -19.0
+margin_top = -28.0
+margin_right = 21.0
+margin_bottom = -14.0
+align = 1
+valign = 1
+
+[node name="Emote" parent="." instance=ExtResource( 4 )]
+position = Vector2( 4, -25 )
+
+[node name="HurtBox" type="Area2D" parent="."]
+script = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2( 1.5, 1.5 )
+shape = SubResource( 3 )
+
+[connection signal="body_entered" from="DetectionSphere" to="." method="_on_DetectionSphere_body_entered"]
+[connection signal="body_exited" from="DetectionSphere" to="." method="_on_DetectionSphere_body_exited"]
+[connection signal="timeout" from="ShotTimer" to="." method="_on_ShotTimer_timeout"]
