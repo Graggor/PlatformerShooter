@@ -51,7 +51,7 @@ func _on_WaitTimer_timeout():
 
 
 func _on_Area2D_body_entered(body):
-	print("player in")
 	if body.is_in_group("player"):
+		start_waiting()
 		set_physics_process(true)
 	$PathFollow2D/Area2D/CollisionShape2D.set_disabled(true)
