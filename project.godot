@@ -28,18 +28,24 @@ _global_script_classes=[ {
 "class": "HurtBox",
 "language": "GDScript",
 "path": "res://Items/Weapons/HurtBox.gd"
+}, {
+"base": "Reference",
+"class": "Level",
+"language": "GDScript",
+"path": "res://Levels/Level.gd"
 } ]
 _global_script_class_icons={
 "Enemy": "",
 "Gun": "",
 "HitBox": "",
-"HurtBox": ""
+"HurtBox": "",
+"Level": ""
 }
 
 [application]
 
 config/name="Platformer Shooter"
-run/main_scene="res://Levels/World.tscn"
+run/main_scene="res://GameManager.tscn"
 config/icon="res://icon.png"
 
 [display]

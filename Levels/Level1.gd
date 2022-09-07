@@ -1,10 +1,8 @@
-extends Node2D
-
-var checkpoints
+extends Level
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	checkpoints = $CheckPoints.get_children()
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
