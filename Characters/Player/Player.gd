@@ -3,7 +3,7 @@ extends KinematicBody2D
 var unit_size = 32
 
 var velocity = Vector2()
-var speed = 5 * unit_size
+var speed = 7 * unit_size
 var gravity
 var max_jump_velocity
 var min_jump_velocity
@@ -17,6 +17,8 @@ var jump_duration = 0.3
 var snap = Vector2.ZERO
 
 onready var body = $Body
+
+signal player_died
 
 func _ready():
 	gravity = 2 * max_jump_height / pow(jump_duration, 2)
@@ -55,3 +57,7 @@ func get_input():
 		velocity.x += speed
 	if Input.is_action_pressed("move_left"):
 		velocity.x -= speed
+
+func die():
+	emit_signal("player_died")
+	get_tree().reload_current_scene()

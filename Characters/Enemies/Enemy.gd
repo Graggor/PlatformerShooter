@@ -153,3 +153,6 @@ func _on_ammo_changed(amount):
 
 func _on_ShotTimer_timeout():
 	can_shoot = true
+
+func die():
+	pass

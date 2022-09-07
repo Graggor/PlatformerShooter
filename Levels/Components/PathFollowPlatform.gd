@@ -4,6 +4,7 @@ onready var path_follower = $PathFollow2D
 
 export var speed = 100
 export var wait_time = 0.0
+export var player_dependant = false
 
 var going_forward = true
 var is_waiting = false
@@ -11,8 +12,11 @@ var is_waiting = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	path_follower.set_rotate(false)
-	print(self.get_curve().get_baked_length())
 	path_follower.rotation_degrees = 0
+	path_follower.unit_offset = 0
+	
+	if player_dependant:
+		set_physics_process(false)
 
 
 # Platform starts by moving forward
@@ -44,3 +48,10 @@ func start_waiting():
 
 func _on_WaitTimer_timeout():
 	is_waiting = false
+
+
+func _on_Area2D_body_entered(body):
+	print("player in")
+	if body.is_in_group("player"):
+		set_physics_process(true)
+	$PathFollow2D/Area2D/CollisionShape2D.set_disabled(true)
