@@ -31,7 +31,7 @@ func _ready():
 	weapon = $Body/Hand.get_child(0)
 	weapon.connect("ammo_changed", self, "_on_ammo_changed")
 
-# TODO: DOESNT MOVE PROPERLY ON CONVEYOR, CLAMP MOVEMENT SPEED SO VELOCITY.X DOESNT HAVE TO BE 0 AT START HERE.
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	velocity.x = 0
@@ -107,7 +107,7 @@ func _fight_state():
 		can_shoot = false
 		weapon._shoot()
 		shot_timer.start()
-
+	
 func _chase_state():
 	emote._play_emote("question", 100)
 	if player_last_position == Vector2.ZERO or !chases:
