@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Characters/Enemies/Enemy.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Characters/Player/enemygroter.png" type="Texture" id=2]
@@ -15,6 +15,85 @@ radius = 140.0
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 8.5, 15.5 )
 
+[sub_resource type="Animation" id=4]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Body:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Body:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 4, 1 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "dead"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Body:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -90.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Body:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 4, 6 ) ]
+}
+
 [node name="Enemy" type="KinematicBody2D"]
 script = ExtResource( 1 )
 detection_radius = 200
@@ -22,6 +101,7 @@ patrols = true
 chases = true
 
 [node name="Body" type="Sprite" parent="."]
+modulate = Color( 0.619608, 0.0627451, 0.0627451, 1 )
 position = Vector2( 4, 1 )
 texture = ExtResource( 2 )
 
@@ -61,7 +141,6 @@ wait_time = 0.6
 one_shot = true
 
 [node name="Label" type="Label" parent="."]
-visible = false
 margin_left = -19.0
 margin_top = -28.0
 margin_right = 21.0
@@ -78,6 +157,10 @@ script = ExtResource( 5 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
 position = Vector2( 1.5, 1.5 )
 shape = SubResource( 3 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 4 )
+anims/dead = SubResource( 5 )
 
 [connection signal="body_entered" from="DetectionSphere" to="." method="_on_DetectionSphere_body_entered"]
 [connection signal="body_exited" from="DetectionSphere" to="." method="_on_DetectionSphere_body_exited"]

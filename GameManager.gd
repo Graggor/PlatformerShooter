@@ -9,10 +9,8 @@ signal timer_changed
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$GUI.hide()
 	connect("timer_changed", $GUI, "_timer_changed")
-	var first_scene_loaded = first_scene.instance()
-	$Level.add_child(first_scene_loaded)
-	start_game()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -21,5 +19,8 @@ func _process(delta):
 	emit_signal("timer_changed", time_elapsed)
 
 func start_game():
+	$MainMenu.hide()
+	$GUI.show()
+	var first_scene_loaded = first_scene.instance()
+	$Level.add_child(first_scene_loaded)
 	time_start = OS.get_unix_time()
-	
