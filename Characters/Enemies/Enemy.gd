@@ -6,6 +6,8 @@ export var patrols = false
 export var chases = false
 export var health = 100
 
+var floaty_text_scene = preload("res://Characters/FloatingText.tscn")
+
 enum States {IDLE, PATROL, ALERT, FIGHT, CHASE, DEAD}
 var state_names = ["Idle", "Patrol", "Alert", "Fight", "Chase", "Dead"]
 var current_state = States.IDLE
@@ -35,7 +37,6 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	velocity.x = 0
-	$Label.text = state_names[current_state]
 	velocity.y += gravity*delta
 	
 	if health <= 0:
@@ -48,11 +49,21 @@ func _physics_process(delta):
 		States.ALERT: _alert_state()
 		States.FIGHT: _fight_state()
 		States.CHASE: _chase_state()
-	
+	$Label.text = state_names[current_state]
 	velocity = move_and_slide_with_snap(velocity, Vector2.DOWN, Vector2.UP, true)
 
 func take_damage(amount):
+	if current_state == States.DEAD:
+		return
 	health -= amount
+	
+	var floaty_text = floaty_text_scene.instance()
+	floaty_text.global_position = global_position + Vector2(0, -30)
+	floaty_text.velocity = Vector2(rand_range(-50, 50), -100)
+	floaty_text.modulate = Color(rand_range(0.7, 1), rand_range(0.7, 1), rand_range(0.7, 1), 1.0)
+	
+	floaty_text.text = amount
+	add_child(floaty_text)
 
 func _idle_state():
 	emote._stop_emote()
@@ -126,6 +137,7 @@ func _chase_state():
 
 func _dead_state():
 	print("im dead")
+	$AnimationPlayer.play("dead")
 	set_physics_process(false)
 	set_process(false)
 

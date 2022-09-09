@@ -32,7 +32,7 @@ shape = SubResource( 6 )
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="PathFollow2D"]
 remote_path = NodePath("../../KinematicBody2D")
 
-[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+[node name="KinematicBody2D" type="KinematicBody2D" parent="." groups=["environment"]]
 position = Vector2( 37, 11 )
 motion/sync_to_physics = true
 
