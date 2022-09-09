@@ -53,7 +53,8 @@ func _physics_process(delta):
 	velocity = move_and_slide_with_snap(velocity, Vector2.DOWN, Vector2.UP, true)
 
 func take_damage(amount):
-	print(amount)
+	if current_state == States.DEAD:
+		return
 	health -= amount
 	
 	var floaty_text = floaty_text_scene.instance()
