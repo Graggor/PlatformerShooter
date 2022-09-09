@@ -5,6 +5,7 @@ onready var path_follower = $PathFollow2D
 export var speed = 100
 export var wait_time = 0.0
 export var player_dependant = false
+export var loop = false
 
 var going_forward = true
 var is_waiting = false
@@ -18,12 +19,14 @@ func _ready():
 	if player_dependant:
 		set_physics_process(false)
 
-
 # Platform starts by moving forward
 # If it reaches the end (clamped so it doesn't automatically go to the start again) it reverses
 # The same happens when going backwards, when reaching start it reverses again
 func _physics_process(delta):
 	if is_waiting:
+		return
+	if loop:
+		path_follower.offset = path_follower.offset + speed*delta
 		return
 	if going_forward:
 		if path_follower.unit_offset >= 1:
@@ -54,4 +57,4 @@ func _on_Area2D_body_entered(body):
 	if body.is_in_group("player"):
 		start_waiting()
 		set_physics_process(true)
-	$PathFollow2D/Area2D/CollisionShape2D.set_disabled(true)
+	$PathFollow2D/Area2D/CollisionShape2D.set_deferred("disabled", true)
