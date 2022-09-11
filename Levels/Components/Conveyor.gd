@@ -7,7 +7,6 @@ var conveyor_texture = preload("res://Sprites/World/Tiles/crosstile.png")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var shape_size = $CollisionShape2D.get_shape().get_extents()
-	print(shape_size)
 	constant_linear_velocity.x = speed
 	sprite.texture = AtlasTexture.new()
 	sprite.texture.set_atlas(conveyor_texture)
