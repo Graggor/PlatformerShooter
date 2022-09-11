@@ -55,23 +55,30 @@ position = Vector2( 264, -48 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="Player"]
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="Player/ParallaxBackground"]
+[node name="BackGroundColorLayer" type="ParallaxLayer" parent="Player/ParallaxBackground"]
+motion_scale = Vector2( 0.1, 0.1 )
 motion_mirroring = Vector2( 640, 0 )
 
-[node name="Sprite" type="Sprite" parent="Player/ParallaxBackground/ParallaxLayer"]
+[node name="Sprite" type="Sprite" parent="Player/ParallaxBackground/BackGroundColorLayer"]
 texture = ExtResource( 13 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 2560, 1080 )
 
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="Player/ParallaxBackground"]
-motion_mirroring = Vector2( 640, 0 )
+[node name="MoonLayer" type="ParallaxLayer" parent="Player/ParallaxBackground"]
+motion_scale = Vector2( 0.001, 0.001 )
 
-[node name="Sprite" type="Sprite" parent="Player/ParallaxBackground/ParallaxLayer2"]
-texture = ExtResource( 15 )
-
-[node name="ParallaxLayer3" type="ParallaxLayer" parent="Player/ParallaxBackground"]
-motion_mirroring = Vector2( 640, 0 )
-
-[node name="Sprite" type="Sprite" parent="Player/ParallaxBackground/ParallaxLayer3"]
+[node name="Sprite" type="Sprite" parent="Player/ParallaxBackground/MoonLayer"]
+position = Vector2( 248, -32 )
 texture = ExtResource( 14 )
+
+[node name="BuildingsLayer" type="ParallaxLayer" parent="Player/ParallaxBackground"]
+motion_scale = Vector2( 0.5, 0.18 )
+motion_mirroring = Vector2( 640, 0 )
+
+[node name="Sprite" type="Sprite" parent="Player/ParallaxBackground/BuildingsLayer"]
+texture = ExtResource( 15 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 2560, 640 )
 
 [node name="DeathZone" parent="." instance=ExtResource( 9 )]
 position = Vector2( 520, 944 )

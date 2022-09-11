@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Buildings.png-282dae91f494d239942e3afa20b9a79b.stex"
+path="res://.import/playerwithhpbar.png-e2555bcac2bf3aa4e691e53683ee38d8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/World/Background/Buildings.png"
-dest_files=[ "res://.import/Buildings.png-282dae91f494d239942e3afa20b9a79b.stex" ]
+source_file="res://GUI/playerwithhpbar.png"
+dest_files=[ "res://.import/playerwithhpbar.png-e2555bcac2bf3aa4e691e53683ee38d8.stex" ]
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
-flags/repeat=1
+flags/repeat=0
 flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
