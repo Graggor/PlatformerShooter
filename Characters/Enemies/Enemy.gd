@@ -5,6 +5,9 @@ export var detection_radius = 140
 export var patrols = false
 export var chases = false
 export var health = 100
+var speed = 0
+var patrol_speed = 2*32
+var run_speed = 3*32
 
 var floaty_text_scene = preload("res://Characters/FloatingText.tscn")
 
@@ -13,7 +16,8 @@ var state_names = ["Idle", "Patrol", "Alert", "Fight", "Chase", "Dead"]
 var current_state = States.IDLE
 
 var velocity = Vector2()
-var gravity = 200
+var gravity = 300
+var direction = 1
 
 var player_detected = false
 var player = null
@@ -29,6 +33,7 @@ var has_to_reload = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Body/LedgeDetector.add_exception(self)
+	$Body/WallDetector.add_exception(self)
 	$DetectionSphere/CollisionShape2D.shape.radius = detection_radius
 	weapon = $Body/Hand.get_child(0)
 	weapon.connect("ammo_changed", self, "_on_ammo_changed")
@@ -36,7 +41,6 @@ func _ready():
 # TODO: DOESNT MOVE PROPERLY ON CONVEYOR, CLAMP MOVEMENT SPEED SO VELOCITY.X DOESNT HAVE TO BE 0 AT START HERE.
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	velocity.x = 0
 	velocity.y += gravity*delta
 	
 	if health <= 0:
@@ -50,6 +54,7 @@ func _physics_process(delta):
 		States.FIGHT: _fight_state()
 		States.CHASE: _chase_state()
 	$Label.text = state_names[current_state]
+	velocity.x = lerp(velocity.x, speed * direction, 0.4)
 	velocity = move_and_slide_with_snap(velocity, Vector2.DOWN, Vector2.UP, true)
 
 func take_damage(amount):
@@ -64,6 +69,8 @@ func take_damage(amount):
 	
 	floaty_text.text = amount
 	add_child(floaty_text)
+	if current_state != States.FIGHT:
+		current_state = States.ALERT
 
 func _idle_state():
 	emote._stop_emote()
@@ -75,12 +82,9 @@ func _idle_state():
 		return
 
 func _patrol_state():
-	if $Body.scale.x == 1:
-		velocity.x += 2*32
-	else:
-		velocity.x -= 2*32
+	speed = patrol_speed
 	if _check_ledge_and_wall():
-		$Body.scale.x = -$Body.scale.x
+		turn_around()
 	if _player_visible() and !_is_behind(player.position):
 		current_state = States.FIGHT
 
@@ -99,7 +103,8 @@ func _player_visible():
 	return false
 
 func _alert_state():
-	pass
+	emote._play_emote("alert", 100)
+	current_state = States.FIGHT
 
 func _fight_state():
 	if player == null:
@@ -112,14 +117,17 @@ func _fight_state():
 	$Body/Hand.look_at(player.position)
 	if player.position.x < position.x:
 		$Body.scale.x = -1
+		direction = -1
 	else:
 		$Body.scale.x = 1
+		direction = 1
 	if can_shoot and !has_to_reload:
 		can_shoot = false
 		weapon._shoot()
 		shot_timer.start()
 
 func _chase_state():
+	speed = run_speed
 	emote._play_emote("question", 100)
 	if player_last_position == Vector2.ZERO or !chases:
 		current_state = States.IDLE
@@ -130,10 +138,6 @@ func _chase_state():
 	if player_detected and _player_visible():
 		current_state = States.IDLE
 		return
-	if player_last_position.x > position.x:
-		velocity.x += 3*32
-	else:
-		velocity.x -= 3*32
 
 func _dead_state():
 	print("im dead")
@@ -142,7 +146,11 @@ func _dead_state():
 	set_process(false)
 
 func _check_ledge_and_wall():
-	return !$Body/LedgeDetector.is_colliding()
+	if $Body/WallDetector.is_colliding():
+		return true
+	if !$Body/LedgeDetector.is_colliding() && is_on_floor():
+		return true
+	return false
 
 func _on_DetectionSphere_body_entered(body):
 	if body.is_in_group("player"):
@@ -162,6 +170,10 @@ func _on_ammo_changed(amount):
 		weapon.start_reloading()
 	else:
 		has_to_reload = false
+
+func turn_around():
+	$Body.scale.x = -$Body.scale.x
+	direction = -direction
 
 func _on_ShotTimer_timeout():
 	can_shoot = true

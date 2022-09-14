@@ -9,6 +9,8 @@ onready var gunplayer = $GunPlayer
 onready var shoottimer = $ShootTimer
 export var shooting_cooldown = 0.2
 
+var shooter = null
+
 export var full_automatic = false
 var ammunition
 export var max_ammunition = 5
@@ -32,10 +34,10 @@ func _shoot():
 		can_shoot = false
 		shoottimer.start(shooting_cooldown)
 	var b = Bullet.instance()
-	add_child(b)
-	b.set_as_toplevel(true)
 	b.bullet_owner = owner
+	b.set_as_toplevel(true)
 	b.transform = $Position2D.global_transform
+	add_child(b)
 	audio.pitch_scale = audio_pitch
 	muzzleplayer.play("muzzle")
 	#audio.play()

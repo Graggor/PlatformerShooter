@@ -17,6 +17,9 @@ var jump_duration = 0.3
 var snap = Vector2.ZERO
 
 onready var body = $Body
+var floaty_text_scene = preload("res://Characters/FloatingText.tscn")
+
+export var health = 500
 
 signal player_died
 
@@ -57,6 +60,16 @@ func get_input():
 		velocity.x += speed
 	if Input.is_action_pressed("move_left"):
 		velocity.x -= speed
+
+func take_damage(amount):
+	health -= amount
+	var floaty_text = floaty_text_scene.instance()
+	floaty_text.global_position = global_position + Vector2(0, -30)
+	floaty_text.velocity = Vector2(rand_range(-50, 50), -100)
+	floaty_text.modulate = Color(rand_range(0.7, 1), rand_range(0.7, 1), rand_range(0.7, 1), 1.0)
+	
+	floaty_text.text = amount
+	add_child(floaty_text)
 
 func die():
 	emit_signal("player_died")
