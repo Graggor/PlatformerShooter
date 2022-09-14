@@ -107,6 +107,7 @@ func _alert_state():
 	current_state = States.FIGHT
 
 func _fight_state():
+	speed = 0
 	if player == null:
 		current_state = States.CHASE
 		return
