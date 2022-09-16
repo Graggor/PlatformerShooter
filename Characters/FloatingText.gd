@@ -5,6 +5,7 @@ onready var tween = $Tween
 var velocity = Vector2(50, -100)
 var gravity = Vector2(0, 1)
 var mass = 200
+var max_scale = 1.0
 
 # warning-ignore:unused_class_variable
 var text setget set_text, get_text
@@ -19,11 +20,11 @@ func _ready():
 
 	tween.interpolate_property(self, "scale",
 		Vector2(0, 0),
-		Vector2(1.0, 1.0),
+		Vector2(max_scale, max_scale),
 		0.3, Tween.TRANS_QUART, Tween.EASE_OUT)
 	
 	tween.interpolate_property(self, "scale",
-		Vector2(1.0, 1.0),
+		Vector2(max_scale, max_scale),
 		Vector2(0.4, 0.4),
 		0.3, Tween.TRANS_QUART, Tween.EASE_OUT)
 	
