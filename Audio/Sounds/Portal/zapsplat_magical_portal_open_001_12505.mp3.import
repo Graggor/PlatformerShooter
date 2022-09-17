@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/zapsplat_magical_portal_open_001_12505.mp3-0c354b26a707f0779114cc7daf900903.mp3str"
+
+[deps]
+
+source_file="res://Audio/Sounds/Portal/zapsplat_magical_portal_open_001_12505.mp3"
+dest_files=[ "res://.import/zapsplat_magical_portal_open_001_12505.mp3-0c354b26a707f0779114cc7daf900903.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
