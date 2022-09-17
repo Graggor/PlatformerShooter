@@ -2,7 +2,8 @@
 
 [ext_resource path="res://Sprites/World/Environment/Portal.png" type="Texture" id=1]
 [ext_resource path="res://Levels/Components/Portal.gd" type="Script" id=2]
-[ext_resource path="res://Sprites/World/Environment/light.png" type="Texture" id=3]
+[ext_resource path="res://Audio/Sounds/Portal/zapsplat_magical_portal_open_001_12505.mp3" type="AudioStream" id=3]
+[ext_resource path="res://Sprites/World/Environment/light.png" type="Texture" id=4]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 1 )
@@ -58,12 +59,16 @@ amount = 15
 process_material = SubResource( 7 )
 
 [node name="Light2D" type="Light2D" parent="."]
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 energy = 0.4
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 8 )
+
+[node name="PortalSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
+max_distance = 10.0
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
