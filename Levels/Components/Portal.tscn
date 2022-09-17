@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Sprites/World/Environment/Portal.png" type="Texture" id=1]
 [ext_resource path="res://Levels/Components/Portal.gd" type="Script" id=2]
+[ext_resource path="res://Sprites/World/Environment/light.png" type="Texture" id=3]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 1 )
@@ -57,9 +58,8 @@ amount = 15
 process_material = SubResource( 7 )
 
 [node name="Light2D" type="Light2D" parent="."]
-texture = ExtResource( 1 )
-color = Color( 0.894118, 0.866667, 1, 1 )
-energy = 3.0
+texture = ExtResource( 3 )
+energy = 0.4
 
 [node name="Area2D" type="Area2D" parent="."]
 
