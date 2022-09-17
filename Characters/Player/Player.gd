@@ -10,6 +10,10 @@ var min_jump_velocity
 var is_grounded
 var is_jumping = false
 
+var wallJump = 150
+var jumpWall = 60
+
+
 var max_jump_height = 3.25 * unit_size
 var min_jump_height = 0.8 * unit_size
 var jump_duration = 0.3
@@ -35,10 +39,16 @@ func _physics_process(delta):
 		velocity.y += gravity*delta
 	snap = Vector2.DOWN * 16 if !is_jumping else Vector2.ZERO
 	velocity = move_and_slide_with_snap(velocity, snap, Vector2.UP, true)
-	if is_on_floor():
+	if is_on_floor() or nextToWall():
 		## If you're on the floor, you're not jumping!
 		is_jumping = false
 		if Input.is_action_just_pressed("jump"):
+			if not is_on_floor() and nextToRightWall():
+				velocity.x -= wallJump
+				velocity.y -= jumpWall
+			if not is_on_floor() and nextToLeftWall():
+				velocity.x += wallJump
+				velocity.y -= jumpWall
 			## Dropdown platform code
 			if Input.is_action_pressed("down"):
 				position.y += 1
@@ -74,3 +84,15 @@ func take_damage(amount):
 func die():
 	emit_signal("player_died")
 	get_tree().reload_current_scene()
+
+func nextToWall():
+	return nextToRightWall() or nextToLeftWall()
+	
+func nextToRightWall():
+	return $RightWall.is_colliding()
+	
+func nextToLeftWall():
+	return $LeftWall.is_colliding()
+	
+	
+	
