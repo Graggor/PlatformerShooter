@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://GUI/GUI.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/UI/PlayerHealthBar/border.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/UI/PlayerHealthBar/fill.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/UI/PlayerHealthBar/background.png" type="Texture" id=4]
 
 [node name="GUI" type="CanvasLayer"]
 script = ExtResource( 1 )
@@ -14,3 +17,11 @@ grow_horizontal = 0
 grow_vertical = 0
 text = "Time: "
 align = 2
+
+[node name="PlayerHealthBar" type="TextureProgress" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+value = 40.0
+texture_under = ExtResource( 4 )
+texture_over = ExtResource( 2 )
+texture_progress = ExtResource( 3 )

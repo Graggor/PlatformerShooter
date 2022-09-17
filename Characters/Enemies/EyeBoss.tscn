@@ -1,13 +1,66 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://Items/Weapons/HurtBox.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Characters/Bosses/EyeBoss/bigeye.png" type="Texture" id=2]
 [ext_resource path="res://Levels/Components/Laser.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Characters/Enemies/EyeBossLasers.gd" type="Script" id=4]
 [ext_resource path="res://Characters/Enemies/EyeBoss.gd" type="Script" id=5]
+[ext_resource path="res://Items/Weapons/HitBox.gd" type="Script" id=6]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 60.0
+
+[sub_resource type="Animation" id=29]
+resource_name = "Death"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("HurtBox/CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("SuperAttack/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Sprite:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 4, 5, 6, 7 ]
+}
 
 [sub_resource type="Animation" id=2]
 length = 0.001
@@ -58,6 +111,122 @@ tracks/3/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( -1, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Sprite:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("HurtBox:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("SuperAttack/CollisionShape2D:shape:radius")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.01 ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("SuperAttack/CollisionShape2D:disabled")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("HurtBox/CollisionShape2D:disabled")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=24]
+resource_name = "SuperAttack"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("SuperAttack/CollisionShape2D:shape:radius")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3, 4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.01, 520.0, 0.01 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("SuperAttack/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 3.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+
+[sub_resource type="Animation" id=19]
+resource_name = "ZigZag"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 1.5, 2, 2.5, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -384, -320 ), Vector2( 336, -376 ), Vector2( -384, -136 ), Vector2( 456, -64 ), Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("HurtBox:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1, 1.5, 2, 2.5, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -384, -320 ), Vector2( 336, -376 ), Vector2( -384, -136 ), Vector2( 456, -64 ), Vector2( 0, 0 ) ]
 }
 
 [sub_resource type="Animation" id=6]
@@ -207,6 +376,12 @@ tracks/2/keys = {
 "values": [ 3 ]
 }
 
+[sub_resource type="AnimationNodeAnimation" id=25]
+animation = "SuperAttack"
+
+[sub_resource type="AnimationNodeAnimation" id=20]
+animation = "ZigZag"
+
 [sub_resource type="AnimationNodeAnimation" id=8]
 animation = "angry_middle"
 
@@ -221,12 +396,14 @@ animation = "laser_right"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=12]
 switch_mode = 2
+advance_condition = "left"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=13]
 switch_mode = 2
-auto_advance = true
+advance_condition = "right"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=14]
+advance_condition = "attacking"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=17]
 switch_mode = 2
@@ -236,7 +413,24 @@ auto_advance = true
 switch_mode = 2
 auto_advance = true
 
+[sub_resource type="AnimationNodeStateMachineTransition" id=21]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=22]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=27]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=28]
+switch_mode = 2
+
 [sub_resource type="AnimationNodeStateMachine" id=15]
+states/SuperAttack/node = SubResource( 25 )
+states/SuperAttack/position = Vector2( 252, 11 )
+states/ZigZag/node = SubResource( 20 )
+states/ZigZag/position = Vector2( 106, 217 )
 states/angry_middle/node = SubResource( 8 )
 states/angry_middle/position = Vector2( 442, 76 )
 states/idle/node = SubResource( 9 )
@@ -245,11 +439,14 @@ states/laser_left/node = SubResource( 10 )
 states/laser_left/position = Vector2( 332, 178 )
 states/laser_right/node = SubResource( 11 )
 states/laser_right/position = Vector2( 570, 178 )
-transitions = [ "angry_middle", "laser_left", SubResource( 12 ), "angry_middle", "laser_right", SubResource( 13 ), "idle", "angry_middle", SubResource( 14 ), "laser_right", "idle", SubResource( 17 ), "laser_left", "idle", SubResource( 18 ) ]
+transitions = [ "angry_middle", "laser_left", SubResource( 12 ), "angry_middle", "laser_right", SubResource( 13 ), "idle", "angry_middle", SubResource( 14 ), "laser_right", "idle", SubResource( 17 ), "laser_left", "idle", SubResource( 18 ), "idle", "ZigZag", SubResource( 21 ), "ZigZag", "idle", SubResource( 22 ), "SuperAttack", "idle", SubResource( 27 ), "angry_middle", "SuperAttack", SubResource( 28 ) ]
 start_node = "idle"
-graph_offset = Vector2( -289, 14 )
+graph_offset = Vector2( -441, -17 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=16]
+
+[sub_resource type="CircleShape2D" id=23]
+radius = 0.01
 
 [node name="EyeBoss" type="Node2D"]
 script = ExtResource( 5 )
@@ -257,15 +454,15 @@ script = ExtResource( 5 )
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( -1, 1 )
 texture = ExtResource( 2 )
-hframes = 4
+hframes = 8
 frame = 2
 
 [node name="HurtBox" type="Area2D" parent="."]
 script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
-visible = false
 shape = SubResource( 1 )
+disabled = true
 
 [node name="Lasers" type="Node2D" parent="."]
 script = ExtResource( 4 )
@@ -278,7 +475,10 @@ cast_to = Vector2( -1000, 0 )
 laser_width = 20
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Death = SubResource( 29 )
 anims/RESET = SubResource( 2 )
+anims/SuperAttack = SubResource( 24 )
+anims/ZigZag = SubResource( 19 )
 anims/angry_middle = SubResource( 6 )
 anims/idle = SubResource( 7 )
 anims/laser_left = SubResource( 5 )
@@ -290,7 +490,16 @@ wait_time = 10.0
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource( 15 )
 anim_player = NodePath("../AnimationPlayer")
-active = true
 parameters/playback = SubResource( 16 )
+parameters/conditions/attacking = false
+parameters/conditions/left = false
+parameters/conditions/right = false
+
+[node name="SuperAttack" type="Area2D" parent="."]
+script = ExtResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SuperAttack"]
+shape = SubResource( 23 )
+disabled = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
