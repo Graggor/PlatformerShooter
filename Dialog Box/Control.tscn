@@ -1,0 +1,90 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Dialog Box.gd" type="Script" id=1]
+
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 473, 161 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "TextScrollArrow"
+length = 0.44
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 473, 161 ), Vector2( 473, 163 ), Vector2( 473, 161 ), Vector2( 473, 159 ), Vector2( 473, 161 ) ]
+}
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Dialog Box" type="ColorRect" parent="."]
+margin_left = 128.0
+margin_top = 177.0
+margin_right = 516.0
+margin_bottom = 310.0
+color = Color( 0.356863, 0.113725, 0.447059, 1 )
+script = ExtResource( 1 )
+dialogPath = "res://Dialog0.json"
+
+[node name="Name" type="RichTextLabel" parent="Dialog Box"]
+margin_left = 3.0
+margin_top = 3.0
+margin_right = 115.0
+margin_bottom = 42.0
+text = "Spirit's Voice"
+
+[node name="Text" type="RichTextLabel" parent="Dialog Box"]
+margin_left = 2.0
+margin_top = 43.0
+margin_right = 385.0
+margin_bottom = 130.0
+text = "Welcome to [Insert name] 
+
+in this Tutorial youre gonna learn the basic movement and stuff you need to know"
+
+[node name="Polygon2D" type="Polygon2D" parent="Dialog Box"]
+position = Vector2( 473, 161 )
+polygon = PoolVector2Array( -106, -48, -93, -48, -100, -36 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Dialog Box/Polygon2D"]
+autoplay = "TextScrollArrow"
+anims/RESET = SubResource( 1 )
+anims/TextScrollArrow = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Dialog Box"]
+
+[node name="Timer" type="Timer" parent="Dialog Box"]
+one_shot = true
