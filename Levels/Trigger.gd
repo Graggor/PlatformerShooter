@@ -2,22 +2,16 @@ extends Area2D
 
 signal PlayerEntered
 
-func _physics_process(_delta):
-	var bodies = get_overlapping_bodies()
-	for body in bodies:
-		if body.name == "Player":
-			emit_signal("PlayerEntered")
-			queue_free()
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+export (NodePath) var door
+export (NodePath) var boss
 
+var activated = false
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	connect("PlayerEntered", get_node(door), "_on_Trigger_PlayerEntered")
+	connect("PlayerEntered", get_node(boss), "_on_Door_isClosed")
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _on_BossDoorTrigger_body_entered(body):
+	if body.name == "Player" && !activated:
+		activated = true
+		emit_signal("PlayerEntered")
