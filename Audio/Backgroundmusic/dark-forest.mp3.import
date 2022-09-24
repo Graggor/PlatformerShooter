@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/dark-forest.mp3-c98961ce735e8615edaf30de67fbbb81.mp3str"
+
+[deps]
+
+source_file="res://Audio/Backgroundmusic/dark-forest.mp3"
+dest_files=[ "res://.import/dark-forest.mp3-c98961ce735e8615edaf30de67fbbb81.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

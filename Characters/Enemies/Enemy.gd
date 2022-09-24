@@ -5,6 +5,8 @@ export var detection_radius = 140
 export var patrols = false
 export var chases = false
 export var health = 100
+export (PackedScene) var gun
+export var elite = false
 var speed = 0
 var patrol_speed = 2*32
 var run_speed = 3*32
@@ -29,14 +31,18 @@ onready var emote = $Emote
 
 var can_shoot = true
 var has_to_reload = false
+var suffix = ""
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Body/LedgeDetector.add_exception(self)
 	$Body/WallDetector.add_exception(self)
 	$DetectionSphere/CollisionShape2D.shape.radius = detection_radius
+	$Body/Hand.add_child(gun.instance())
 	weapon = $Body/Hand.get_child(0)
 	weapon.connect("ammo_changed", self, "_on_ammo_changed")
+	if elite:
+		suffix = "_elite"
 
 # TODO: DOESNT MOVE PROPERLY ON CONVEYOR, CLAMP MOVEMENT SPEED SO VELOCITY.X DOESNT HAVE TO BE 0 AT START HERE.
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -142,7 +148,7 @@ func _chase_state():
 
 func _dead_state():
 	print("im dead")
-	$AnimationPlayer.play("dead")
+	$AnimationPlayer.play("dead"+suffix)
 	set_physics_process(false)
 	set_process(false)
 
