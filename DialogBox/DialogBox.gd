@@ -1,6 +1,7 @@
 extends ColorRect
 
 var dialogPath = "res://DialogBox/Dialog.json"
+var spritePath = "res://Sprites/DialogBox/"
 export(float) var textSpeed = 0.05
 
 var dialog
@@ -50,7 +51,7 @@ func nextPhrase() -> void:
 	$Text.visible_characters = 0
 	
 	var f = File.new()
-	var img = dialog[phraseNum]["Name"] + dialog[phraseNum]["Emotion"] + ".png"
+	var img = spritePath + dialog[phraseNum]["Name"] + dialog[phraseNum]["Emotion"] + ".png"
 	if f.file_exists(img):
 		$Portrait.texture = load(img)
 	else: $Portrait.texture = null
