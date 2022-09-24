@@ -150,6 +150,7 @@ anims/idle = SubResource( 5 )
 
 [node name="RespawnTimer" type="Timer" parent="."]
 wait_time = 5.7
+one_shot = true
 
 [connection signal="body_entered" from="." to="." method="_on_BreakingPlatform_body_entered"]
 [connection signal="timeout" from="RespawnTimer" to="." method="_on_RespawnTimer_timeout"]
