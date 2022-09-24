@@ -52,15 +52,13 @@ position = Vector2( -2.5, 0.5 )
 shape = SubResource( 2 )
 
 [node name="RightWall" type="RayCast2D" parent="."]
-position = Vector2( 1, 5 )
-rotation = -1.5708
+position = Vector2( 3, 0 )
 enabled = true
-cast_to = Vector2( 0, 30 )
+cast_to = Vector2( 10, 0 )
 collision_mask = 32
 
 [node name="LeftWall" type="RayCast2D" parent="."]
-position = Vector2( 1, 5 )
-rotation = 1.5708
+position = Vector2( -8, 0 )
 enabled = true
-cast_to = Vector2( 0, 30 )
+cast_to = Vector2( -10, 0 )
 collision_mask = 32
