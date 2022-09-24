@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Characters/Enemies/Enemy.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Characters/Player/enemygroter.png" type="Texture" id=2]
@@ -53,6 +53,18 @@ tracks/2/keys = {
 "update": 0,
 "values": [ Vector2( 4, 1 ) ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("Body:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
 
 [sub_resource type="Animation" id=5]
 resource_name = "dead"
@@ -94,11 +106,15 @@ tracks/2/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 4, 6 ) ]
 }
 
+[sub_resource type="Animation" id=6]
+resource_name = "dead_elite"
+
 [node name="Enemy" type="KinematicBody2D"]
 script = ExtResource( 1 )
 detection_radius = 200
 patrols = true
 chases = true
+gun = ExtResource( 3 )
 
 [node name="Body" type="Sprite" parent="."]
 modulate = Color( 0.619608, 0.0627451, 0.0627451, 1 )
@@ -119,8 +135,6 @@ collision_mask = 32
 
 [node name="Hand" type="Node2D" parent="Body"]
 position = Vector2( 7, 2 )
-
-[node name="Pistol" parent="Body/Hand" instance=ExtResource( 3 )]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 1.5, 1.5 )
@@ -164,6 +178,7 @@ shape = SubResource( 3 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 4 )
 anims/dead = SubResource( 5 )
+anims/dead_elite = SubResource( 6 )
 
 [connection signal="body_entered" from="DetectionSphere" to="." method="_on_DetectionSphere_body_entered"]
 [connection signal="body_exited" from="DetectionSphere" to="." method="_on_DetectionSphere_body_exited"]
