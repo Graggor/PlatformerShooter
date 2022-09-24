@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Sprites/World/Environment/Portal.png" type="Texture" id=1]
 [ext_resource path="res://Levels/Components/Portal.gd" type="Script" id=2]
@@ -52,7 +52,8 @@ script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 6 )
-frame = 4
+frame = 2
+playing = true
 
 [node name="Particles2D" type="Particles2D" parent="."]
 amount = 15

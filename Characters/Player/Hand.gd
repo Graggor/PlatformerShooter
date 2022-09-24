@@ -27,7 +27,7 @@ func switch_weapon(weapon: Gun):
 	current_weapon = weapon
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if current_weapon.full_automatic:
 		if Input.is_action_pressed("shoot"):
 			current_weapon._shoot()
