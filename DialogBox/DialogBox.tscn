@@ -74,12 +74,11 @@ text = "Welcome to [Insert name]
 
 in this Tutorial youre gonna learn the basic movement and stuff you need to know"
 
-[node name="Polygon2D" type="Polygon2D" parent="DialogBox"]
+[node name="Indicator" type="Polygon2D" parent="DialogBox"]
 position = Vector2( 473, 161 )
 polygon = PoolVector2Array( -106, -48, -93, -48, -100, -36 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="DialogBox"]
-root_node = NodePath("../Polygon2D")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="DialogBox/Indicator"]
 autoplay = "TextScrollArrow"
 anims/RESET = SubResource( 1 )
 anims/TextScrollArrow = SubResource( 2 )
