@@ -29,6 +29,7 @@ func _physics_process(delta):
 
 func set_is_casting(cast: bool):
 	is_casting = cast
+	$HitBox/CollisionShape2D.disabled = !is_casting
 	
 	$CastingParticles2D.emitting = is_casting
 	if is_casting:

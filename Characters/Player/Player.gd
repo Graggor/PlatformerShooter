@@ -23,15 +23,22 @@ var snap = Vector2.ZERO
 onready var body = $Body
 var floaty_text_scene = preload("res://Characters/FloatingText.tscn")
 
-export var health = 500
+export var health = 200
 
 signal player_died
+signal player_health_changed
+signal player_max_health_changed
 
 func _ready():
 	gravity = 2 * max_jump_height / pow(jump_duration, 2)
 	max_jump_velocity = -sqrt(2 * gravity * max_jump_height)
 	min_jump_velocity = -sqrt(2 * gravity * min_jump_height)
-	$Emote._play_emote("alert", 1)
+	var gui = get_node("/root/GameManager/GUI")
+	print(gui)
+	connect("player_health_changed", gui, "_on_player_health_changed")
+	connect("player_max_health_changed", gui, "_on_player_max_health_changed")
+	emit_signal("player_max_health_changed", health)
+	emit_signal("player_health_changed", health)
 
 func _physics_process(delta):
 	get_input()
@@ -80,6 +87,7 @@ func take_damage(amount):
 	
 	floaty_text.text = amount
 	add_child(floaty_text)
+	emit_signal("player_health_changed", health)
 
 func die():
 	emit_signal("player_died")

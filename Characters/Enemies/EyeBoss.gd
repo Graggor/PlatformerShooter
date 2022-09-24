@@ -32,7 +32,8 @@ func take_damage(amount):
 
 
 func _on_Timer_timeout():
-	randomize()
-	var attack_number = randi()%2
-	state_machine.travel(attacks[attack_number])
+	#randomize()
+	#var attack_number = randi()%2
+	#state_machine.travel(attacks[attack_number])
+	state_machine.travel("SuperAttack")
 	

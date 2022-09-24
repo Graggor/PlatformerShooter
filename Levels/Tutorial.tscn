@@ -249,7 +249,7 @@ tracks/1/keys = {
 
 [node name="Tutorial" type="Node2D"]
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="TileMap" type="TileMap" parent="." groups=["environment"]]
 tile_set = SubResource( 4 )
 cell_size = Vector2( 32, 32 )
 collision_layer = 32
