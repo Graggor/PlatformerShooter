@@ -1,6 +1,6 @@
 extends ColorRect
 
-export var dialogPath = ""
+var dialogPath = "res://DialogBox/Dialog.json"
 export(float) var textSpeed = 0.05
 
 var dialog
@@ -11,10 +11,10 @@ var finished = false
 func _ready():
 	$Timer.wait_time = textSpeed
 	dialog = getDialog()
-	assert(dialog, "Dialog not found")
+	#assert(dialog, "Dialog not found")
 	nextPhrase()
 	
-func _process(delta):
+func _process(_delta):
 	$Indicator.visible = finished
 	if Input.is_action_just_pressed("ui_accept"):
 		if finished:
@@ -24,7 +24,8 @@ func _process(delta):
 	
 func getDialog() -> Array:
 	var f = File.new()
-	assert(f.file_exists(dialogPath),"File Path does not exist")
+	print(dialogPath)
+	assert(f.file_exists(dialogPath), "File Path does not exist")
 	
 	f.open(dialogPath, File.READ)
 	var json = f.get_as_text()

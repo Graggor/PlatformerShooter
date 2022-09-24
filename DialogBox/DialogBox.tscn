@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Dialog Box.gd" type="Script" id=1]
+[ext_resource path="res://DialogBox/DialogBox.gd" type="Script" id=1]
 
 [sub_resource type="Animation" id=1]
 length = 0.001
@@ -46,7 +46,7 @@ tracks/0/keys = {
 "values": [ Vector2( 473, 161 ), Vector2( 473, 163 ), Vector2( 473, 161 ), Vector2( 473, 159 ), Vector2( 473, 161 ) ]
 }
 
-[node name="Control" type="Control"]
+[node name="DialogBox" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 
@@ -57,7 +57,6 @@ margin_right = 516.0
 margin_bottom = 310.0
 color = Color( 0.356863, 0.113725, 0.447059, 1 )
 script = ExtResource( 1 )
-dialogPath = "res://Dialog0.json"
 
 [node name="Name" type="RichTextLabel" parent="Dialog Box"]
 margin_left = 3.0
@@ -79,12 +78,13 @@ in this Tutorial youre gonna learn the basic movement and stuff you need to know
 position = Vector2( 473, 161 )
 polygon = PoolVector2Array( -106, -48, -93, -48, -100, -36 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Dialog Box/Polygon2D"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Dialog Box"]
+root_node = NodePath("../Polygon2D")
 autoplay = "TextScrollArrow"
 anims/RESET = SubResource( 1 )
 anims/TextScrollArrow = SubResource( 2 )
 
-[node name="Sprite" type="Sprite" parent="Dialog Box"]
+[node name="Portrait" type="Sprite" parent="Dialog Box"]
 
 [node name="Timer" type="Timer" parent="Dialog Box"]
 one_shot = true
