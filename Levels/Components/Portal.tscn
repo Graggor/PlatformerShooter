@@ -52,7 +52,7 @@ script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 6 )
-frame = 2
+frame = 4
 playing = true
 
 [node name="Particles2D" type="Particles2D" parent="."]
@@ -70,6 +70,7 @@ shape = SubResource( 8 )
 
 [node name="PortalSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 3 )
+autoplay = true
 max_distance = 10.0
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

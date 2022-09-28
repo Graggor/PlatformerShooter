@@ -3,7 +3,9 @@ extends KinematicBody2D
 var Ball = preload("res://Items/Weapons/TutorialBossBall.tscn")
 onready var attack_timer = $AttackTimer
 onready var attack_cooldown = $AttackCooldown
+export var health = 500
 
+var floaty_text_scene = preload("res://Characters/FloatingText.tscn")
 var can_attack = false
 var attack_phase = false
 
@@ -47,3 +49,15 @@ func _on_AttackTimer_timeout():
 func _on_AttackCooldown_timeout():
 	if attack_phase:
 		can_attack = true
+
+func take_damage(amount):
+	health -= amount
+	
+	var floaty_text = floaty_text_scene.instance()
+	floaty_text.global_position = global_position + Vector2(0, -30)
+	floaty_text.max_scale = 2
+	floaty_text.velocity = Vector2(rand_range(-50, 50), -100)
+	floaty_text.modulate = Color(rand_range(0.7, 1), rand_range(0.7, 1), rand_range(0.7, 1), 1.0)
+	
+	floaty_text.text = amount
+	add_child(floaty_text)
