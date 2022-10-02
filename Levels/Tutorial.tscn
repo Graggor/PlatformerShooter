@@ -393,3 +393,7 @@ script = ExtResource( 13 )
 [node name="BossDoorTrigger" parent="Bossroom" instance=ExtResource( 4 )]
 door = NodePath("../BossDoor")
 boss = NodePath("../TutorialBoss")
+
+[node name="Camera2D" type="Camera2D" parent="Bossroom/BossDoorTrigger"]
+position = Vector2( 6128, -704 )
+zoom = Vector2( 1.1, 1.1 )
