@@ -13,5 +13,6 @@ func _ready():
 
 func _on_BossDoorTrigger_body_entered(body):
 	if body.name == "Player" && !activated:
+		$Camera2D.current = true
 		activated = true
 		emit_signal("PlayerEntered")

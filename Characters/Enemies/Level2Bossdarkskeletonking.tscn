@@ -376,6 +376,18 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 0 ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("Boss:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
 
 [sub_resource type="Animation" id=33]
 resource_name = "Swordattack"
@@ -891,7 +903,7 @@ tracks/2/keys = {
 "values": [ true, true ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath(".:position")
+tracks/3/path = NodePath("Hurtbox/CollisionShape2D:disabled")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -899,34 +911,34 @@ tracks/3/enabled = true
 tracks/3/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 0, 0 ) ]
+"update": 1,
+"values": [ false, false ]
 }
-tracks/4/type = "value"
-tracks/4/path = NodePath("Hurtbox/CollisionShape2D:disabled")
+tracks/4/type = "method"
+tracks/4/path = NodePath(".")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ false, false ]
-}
-tracks/5/type = "method"
-tracks/5/path = NodePath(".")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
 "times": PoolRealArray( 1 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
 "method": "increase_idle_count"
 } ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Boss:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
 }
 
 [sub_resource type="Animation" id=6]
@@ -1777,7 +1789,6 @@ advance_condition = "death"
 advance_condition = "death"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=66]
-auto_advance = true
 advance_condition = "Setup"
 
 [sub_resource type="AnimationNodeStateMachine" id=58]
@@ -1799,7 +1810,7 @@ states/superattack/node = SubResource( 42 )
 states/superattack/position = Vector2( -298, -400.677 )
 transitions = [ "appear", "movetocenter", SubResource( 45 ), "movetocenter", "idle", SubResource( 46 ), "idle", "move", SubResource( 47 ), "move", "idle", SubResource( 48 ), "idle", "Swordattack", SubResource( 49 ), "idle", "superattack", SubResource( 50 ), "Swordattack", "idle", SubResource( 59 ), "superattack", "idle", SubResource( 60 ), "idle", "death", SubResource( 61 ), "superattack", "death", SubResource( 62 ), "move", "death", SubResource( 63 ), "Swordattack", "death", SubResource( 64 ), "SETUP", "appear", SubResource( 66 ) ]
 start_node = "SETUP"
-graph_offset = Vector2( -1109.41, -340.947 )
+graph_offset = Vector2( -1289.41, -278.947 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=22]
 
