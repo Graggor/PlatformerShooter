@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://Characters/Enemies/AnimationTreelevel2boss.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/World/Environment/flash-bright-white-light-transparent-background-vector_506110-322.webp" type="Texture" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://Characters/Enemies/Level2Bossdarkskeletonking.gd" type="Script" id=4]
 [ext_resource path="res://Items/Weapons/HurtBox.gd" type="Script" id=5]
 [ext_resource path="res://Items/Weapons/sword.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Health/HealthBar.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Health/Health.tscn" type="PackedScene" id=8]
 
 [sub_resource type="CapsuleShape2D" id=24]
 radius = 23.0
@@ -522,7 +524,7 @@ tracks/10/loop_wrap = true
 tracks/10/imported = false
 tracks/10/enabled = true
 tracks/10/keys = {
-"times": PoolRealArray( 1.4 ),
+"times": PoolRealArray( 1.3 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
@@ -863,10 +865,33 @@ tracks/4/keys = {
 "update": 1,
 "values": [ true, true ]
 }
+tracks/5/type = "value"
+tracks/5/path = NodePath("Swords/sword2:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 2.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, false ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Swords/sword7:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 2.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, false ]
+}
 
 [sub_resource type="Animation" id=5]
 resource_name = "idle"
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Boss:frame")
 tracks/0/interp = 1
@@ -1161,6 +1186,18 @@ tracks/16/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ -135.0, -135.0, -135.0, -135.0, -135.0, -135.0, -315.0, -314.524, -314.049, -313.605, -313.034, -312.59 ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("AnimationTree:parameters/conditions/move")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 2.7 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
 }
 
 [sub_resource type="Animation" id=26]
@@ -1706,7 +1743,7 @@ tracks/7/keys = {
 }
 
 [sub_resource type="AnimationNodeAnimation" id=65]
-animation = "RESET"
+animation = "SETUP"
 
 [sub_resource type="AnimationNodeAnimation" id=36]
 animation = "Swordattack"
@@ -1775,11 +1812,13 @@ advance_condition = "death"
 advance_condition = "death"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=66]
+switch_mode = 2
 auto_advance = true
+advance_condition = "Setup"
 
 [sub_resource type="AnimationNodeStateMachine" id=58]
-states/RESET/node = SubResource( 65 )
-states/RESET/position = Vector2( -1193.41, -186 )
+states/SETUP/node = SubResource( 65 )
+states/SETUP/position = Vector2( -1177.41, -186 )
 states/Swordattack/node = SubResource( 36 )
 states/Swordattack/position = Vector2( -711, 7.323 )
 states/appear/node = SubResource( 37 )
@@ -1794,32 +1833,36 @@ states/movetocenter/node = SubResource( 41 )
 states/movetocenter/position = Vector2( -810, -186 )
 states/superattack/node = SubResource( 42 )
 states/superattack/position = Vector2( -298, -400.677 )
-transitions = [ "appear", "movetocenter", SubResource( 45 ), "movetocenter", "idle", SubResource( 46 ), "idle", "move", SubResource( 47 ), "move", "idle", SubResource( 48 ), "idle", "Swordattack", SubResource( 49 ), "idle", "superattack", SubResource( 50 ), "Swordattack", "idle", SubResource( 59 ), "superattack", "idle", SubResource( 60 ), "idle", "death", SubResource( 61 ), "superattack", "death", SubResource( 62 ), "move", "death", SubResource( 63 ), "Swordattack", "death", SubResource( 64 ), "RESET", "appear", SubResource( 66 ) ]
-start_node = "RESET"
-graph_offset = Vector2( -1342.41, -413.122 )
+transitions = [ "appear", "movetocenter", SubResource( 45 ), "movetocenter", "idle", SubResource( 46 ), "idle", "move", SubResource( 47 ), "move", "idle", SubResource( 48 ), "idle", "Swordattack", SubResource( 49 ), "idle", "superattack", SubResource( 50 ), "Swordattack", "idle", SubResource( 59 ), "superattack", "idle", SubResource( 60 ), "idle", "death", SubResource( 61 ), "superattack", "death", SubResource( 62 ), "move", "death", SubResource( 63 ), "Swordattack", "death", SubResource( 64 ), "SETUP", "appear", SubResource( 66 ) ]
+start_node = "SETUP"
+graph_offset = Vector2( -1316.41, -398.947 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=22]
 
 [node name="Level2Boss" type="KinematicBody2D"]
 script = ExtResource( 4 )
+health = 1250
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 19 )
 shape = SubResource( 24 )
+disabled = true
 
 [node name="Hurtbox" type="Area2D" parent="."]
+monitoring = false
+monitorable = false
 script = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
 position = Vector2( 2, -32 )
 shape = SubResource( 25 )
+disabled = true
 
 [node name="Swords" type="Node" parent="."]
 
 [node name="sword2" parent="Swords" instance=ExtResource( 6 )]
 visible = false
-position = Vector2( -67, -65 )
-rotation = 6.28319
+position = Vector2( -67, -106 )
 
 [node name="sword3" parent="Swords" instance=ExtResource( 6 )]
 visible = false
@@ -1831,7 +1874,7 @@ position = Vector2( -42, -140 )
 
 [node name="sword5" parent="Swords" instance=ExtResource( 6 )]
 visible = false
-position = Vector2( 67, -65 )
+position = Vector2( 67, -106 )
 rotation = -1.5708
 
 [node name="sword6" parent="Swords" instance=ExtResource( 6 )]
@@ -1845,18 +1888,17 @@ position = Vector2( 45, -140 )
 rotation = -1.5708
 
 [node name="Boss" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.882353 )
 texture = ExtResource( 3 )
 flip_h = true
 hframes = 48
-frame = 6
 
 [node name="Light2D" type="Light2D" parent="."]
 texture = ExtResource( 2 )
+energy = 0.5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "SETUP"
-reset_on_save = false
-playback_process_mode = 0
 anims/RESET = SubResource( 1 )
 anims/SETUP = SubResource( 2 )
 anims/Swordattack = SubResource( 33 )
@@ -1873,8 +1915,26 @@ anims/vanish = SubResource( 7 )
 tree_root = SubResource( 58 )
 anim_player = NodePath("../AnimationPlayer")
 parameters/playback = SubResource( 22 )
+parameters/conditions/Setup = true
 parameters/conditions/Swordattack = false
 parameters/conditions/death = false
 parameters/conditions/move = false
 parameters/conditions/superattack = false
 script = ExtResource( 1 )
+
+[node name="Health" parent="." instance=ExtResource( 8 )]
+max_amount = 1250
+
+[node name="Healthbar" parent="." instance=ExtResource( 7 )]
+margin_left = -32.0
+margin_top = 64.0
+margin_right = 36.0
+margin_bottom = 71.0
+max_value = 1250.0
+value = 675.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+
+[connection signal="changed" from="Health" to="." method="_on_Health_changed"]
+[connection signal="depleted" from="Health" to="." method="_on_Health_depleted"]

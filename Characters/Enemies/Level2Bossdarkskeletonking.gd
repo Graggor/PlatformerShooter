@@ -1,19 +1,17 @@
 extends KinematicBody2D
 
 """
--Every 2 idle animation the boss move
--if hit boss attack with sword attack or super if below 50%
--After sword or super attack the boss vanish back to idle
+-Every 2 idle animation the boss attack
 -Swordattack by default
+-Move every 70 damage take
 -superattack  below 50% Health
 -Dead when Health depletes
-
 """""
 
 export var health = 2500
 
 onready var _anim_tree = $AnimationTree
-onready var _health = $Health
+
 
 var floaty_text_scene = preload("res://Characters/FloatingText.tscn")
 var _idle_count = 0
@@ -59,7 +57,7 @@ func attack():
 		_attack_set = SWORD
 		if _hurt_count > MOVE_THRESHOLD:
 			_attack_set = MOVE
-		if _health.current <= _health.current * SUPER_THRESHOLD:
+		if health.current <= health.current * SUPER_THRESHOLD:
 			_attack_set = SUPER
 		var attack = _attack_set[randi()%_attack_set.size()]
 		_anim_tree.set_condition(attack, true)
@@ -72,4 +70,8 @@ func _on_Health_depleted() -> void:
 	_anim_tree.set_condition("death" , true )
 	
 func _on_Door_isClosed():
-	_anim_tree
+	_anim_tree.set_condition("Setup", true )
+	
+
+
+
