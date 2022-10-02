@@ -11,7 +11,7 @@ var is_grounded
 var is_jumping = false
 
 var wallJump = 150
-var jumpWall = 60
+var jumpWall = 200
 
 
 var max_jump_height = 3.25 * unit_size
@@ -34,27 +34,27 @@ func _ready():
 	max_jump_velocity = -sqrt(2 * gravity * max_jump_height)
 	min_jump_velocity = -sqrt(2 * gravity * min_jump_height)
 	var gui = get_node("/root/GameManager/GUI")
-	print(gui)
 	connect("player_health_changed", gui, "_on_player_health_changed")
 	connect("player_max_health_changed", gui, "_on_player_max_health_changed")
 	emit_signal("player_max_health_changed", health)
 	emit_signal("player_health_changed", health)
 
 func _physics_process(delta):
-	get_input()
+	get_input(delta)
 	if !is_on_floor():
 		velocity.y += gravity*delta
+	
 	snap = Vector2.DOWN * 16 if !is_jumping else Vector2.ZERO
-	velocity = move_and_slide_with_snap(velocity, snap, Vector2.UP, true)
+	
 	if is_on_floor() or nextToWall():
 		## If you're on the floor, you're not jumping!
 		is_jumping = false
 		if Input.is_action_just_pressed("jump"):
 			if not is_on_floor() and nextToRightWall():
-				velocity.x -= wallJump
+				velocity.x -= speed
 				velocity.y -= jumpWall
 			if not is_on_floor() and nextToLeftWall():
-				velocity.x += wallJump
+				velocity.x += speed
 				velocity.y -= jumpWall
 			## Dropdown platform code
 			if Input.is_action_pressed("down"):
@@ -63,7 +63,7 @@ func _physics_process(delta):
 			## Jumping if not dropping down
 			is_jumping = true
 			velocity.y = max_jump_velocity
-	
+	velocity = move_and_slide_with_snap(velocity, snap, Vector2.UP, true)
 	$Body/Hand.look_at(get_global_mouse_position())
 	
 	if get_global_mouse_position().x < global_position.x:
@@ -71,12 +71,24 @@ func _physics_process(delta):
 	else:
 		body.scale.x = 1
 	
-func get_input():
-	velocity.x = 0
-	if Input.is_action_pressed("move_right"):
-		velocity.x += speed
-	if Input.is_action_pressed("move_left"):
-		velocity.x -= speed
+func get_input(delta):
+	# Did a small rework of movement code, have to put it in the right places for it to be cleaner but it works for now.
+	# If in the air you're not as mobile anymore with movement. This is to prevent walljumping from being OP.
+	# Also applies some drag when on floor instead of setting velocity to 0 so you get pushed away from wall.
+	
+	#velocity.x = 0
+	#if Input.is_action_pressed("move_right"):
+	#	velocity.x += speed
+	#elif Input.is_action_pressed("move_left"):
+	#	velocity.x -= speed
+	#velocity.x = clamp(velocity.x, -speed, speed)
+	var movement_x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
+	if movement_x != 0:
+		velocity.x += movement_x * ((speed * 2) if is_on_floor() else (speed * 0.06))
+		velocity.x = clamp(velocity.x, -speed, speed)
+	if is_on_floor():
+		if movement_x == 0:
+			velocity.x = lerp(velocity.x, 0, 1)
 
 func take_damage(amount):
 	health -= amount

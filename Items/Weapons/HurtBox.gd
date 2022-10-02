@@ -17,5 +17,4 @@ func _on_area_entered(hitbox: HitBox):
 		print(hitbox.owner)
 		print(owner)
 		owner.take_damage(hitbox.damage)
-	
-	hitbox.done_damage()
+		hitbox.done_damage()
