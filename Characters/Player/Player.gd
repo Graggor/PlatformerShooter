@@ -34,7 +34,6 @@ func _ready():
 	max_jump_velocity = -sqrt(2 * gravity * max_jump_height)
 	min_jump_velocity = -sqrt(2 * gravity * min_jump_height)
 	var gui = get_node("/root/GameManager/GUI")
-	print(gui)
 	connect("player_health_changed", gui, "_on_player_health_changed")
 	connect("player_max_health_changed", gui, "_on_player_max_health_changed")
 	emit_signal("player_max_health_changed", health)
