@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/pixel-heart-2779422_960_720.png-875a0ca2f24e3ef18a21015c13336023.stex"
+path="res://.import/pixel-heart-2779422_960_720.png-f4eb6c2db5cd4892cd5bc081379eea2f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Health/pixel-heart-2779422_960_720.png"
-dest_files=[ "res://.import/pixel-heart-2779422_960_720.png-875a0ca2f24e3ef18a21015c13336023.stex" ]
+source_file="res://Sprites/UI/BossHealthBar/pixel-heart-2779422_960_720.png"
+dest_files=[ "res://.import/pixel-heart-2779422_960_720.png-f4eb6c2db5cd4892cd5bc081379eea2f.stex" ]
 
 [params]
 

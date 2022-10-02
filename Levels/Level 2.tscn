@@ -184,7 +184,7 @@ extents = Vector2( 52.5, 32.5 )
 
 [node name="Level 2" type="Node2D"]
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="TileMap" type="TileMap" parent="." groups=["environment"]]
 tile_set = SubResource( 4 )
 cell_size = Vector2( 32, 32 )
 collision_layer = 32
@@ -435,6 +435,12 @@ scale = Vector2( 3, 3 )
 
 [node name="PortalDestination" parent="Portal/Portal11" instance=ExtResource( 9 )]
 position = Vector2( 157.333, -469 )
+
+[node name="Portal12" parent="Portal" instance=ExtResource( 8 )]
+position = Vector2( 11104, -1768 )
+
+[node name="PortalDestination" parent="Portal/Portal12" instance=ExtResource( 9 )]
+position = Vector2( -10824, 1744 )
 
 [node name="Lasers" type="Node" parent="."]
 
