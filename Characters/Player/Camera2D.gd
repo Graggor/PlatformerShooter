@@ -8,7 +8,7 @@ var CAMERA_SPEED = 0.06
 func _ready():
 	pass # Replace with function body.
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	var target = owner.global_position 
 	#var mid_x = ((target.x + get_global_mouse_position().x) / 2) + 64
 	#var mid_y = ((target.y + get_global_mouse_position().y) / 2) + 64

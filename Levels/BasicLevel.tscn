@@ -6,17 +6,17 @@
 
 [node name="BasicLevel" type="Node2D"]
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="TileMap" type="TileMap" parent="." groups=["environment"]]
 tile_set = ExtResource( 3 )
 cell_size = Vector2( 32, 32 )
 collision_layer = 32
-collision_mask = 0
 format = 1
-tile_data = PoolIntArray( 262140, 0, 0, 262141, 0, 0, 262142, 0, 0, 262143, 0, 0, 196608, 0, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0 )
+tile_data = PoolIntArray( 262140, 0, 0, 262141, 0, 0, 262142, 0, 0, 262143, 0, 0, 196608, 0, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 1, 0, 196615, 1, 0, 196616, 1, 0, 196617, 1, 0, 196618, 1, 0, 196619, 1, 0, 196620, 1, 0, 196621, 1, 0, 196622, 1, 0, 196623, 1, 0 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 
 [node name="DeathZone" parent="." instance=ExtResource( 2 )]
+position = Vector2( -8, 376 )
 
 [node name="Enemies" type="Node" parent="."]
 

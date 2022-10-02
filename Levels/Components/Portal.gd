@@ -1,5 +1,6 @@
 extends Node2D
 
+
 var destination
 
 func _ready():
