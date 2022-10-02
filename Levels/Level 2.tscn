@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://Sprites/World/Tiles/stairsleft.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/World/Tiles/stairsright.png" type="Texture" id=2]
@@ -14,6 +14,13 @@
 [ext_resource path="res://Levels/Components/Spike.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Levels/Components/PathFollowPlatform.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Levels/Components/BreakingPlatform.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Levels/Components/Lever.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Characters/Enemies/Level2Bossdarkskeletonking.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Levels/Components/Gate.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Levels/Components/BossDoorTrigger.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Levels/Components/BossDoor.gd" type="Script" id=19]
+[ext_resource path="res://Levels/Components/BreakingPlatform.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Levels/Components/BossDoor.tscn" type="PackedScene" id=21]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
@@ -173,9 +180,12 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 0, -8, 0, 0, 0, 0, -256, -32, 0, 0, 0, 0, -448, -32, 0, 0, 0, 0, -768, -32, 0, 0, 0, 0, -896, -32 )
 }
 
+[sub_resource type="RectangleShape2D" id=20]
+extents = Vector2( 52.5, 32.5 )
+
 [node name="Level 2" type="Node2D"]
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="TileMap" type="TileMap" parent="." groups=["environment"]]
 tile_set = SubResource( 4 )
 cell_size = Vector2( 32, 32 )
 collision_layer = 32
@@ -215,7 +225,7 @@ position = Vector2( 624, -16 )
 position = Vector2( -72, -832 )
 
 [node name="Enemy3" parent="Enemies" instance=ExtResource( 4 )]
-position = Vector2( 1080, -830 )
+position = Vector2( 776, -824 )
 
 [node name="Enemy4" parent="Enemies" instance=ExtResource( 4 )]
 position = Vector2( 4848, -983 )
@@ -243,9 +253,6 @@ position = Vector2( 9856, -3360 )
 
 [node name="Enemy12" parent="Enemies" instance=ExtResource( 4 )]
 position = Vector2( 9848, -3776 )
-
-[node name="Enemy13" parent="Enemies" instance=ExtResource( 4 )]
-position = Vector2( 4584, -535 )
 
 [node name="Checkpoints" type="Node" parent="."]
 
@@ -600,6 +607,15 @@ position = Vector2( 11392, -2848 )
 curve = SubResource( 18 )
 player_dependant = true
 loop = true
+
+[node name="Gates" type="Node" parent="."]
+
+[node name="Gate" parent="Gates" instance=ExtResource( 17 )]
+position = Vector2( 5328, -408 )
+lever = NodePath("../Lever")
+
+[node name="Lever" parent="Gates" instance=ExtResource( 15 )]
+position = Vector2( 4592, -528 )
 
 [node name="BreakingPlatforms" type="Node" parent="."]
 
@@ -1923,3 +1939,26 @@ collision_layer = 32
 [node name="BreakingPlatform2" parent="BreakingPlatforms" instance=ExtResource( 14 )]
 position = Vector2( 4560, -496 )
 collision_layer = 32
+
+[node name="Bossroom" type="Node" parent="."]
+
+[node name="Level2Boss" parent="Bossroom" instance=ExtResource( 16 )]
+scale = Vector2( 2, 2 )
+health = 2000
+
+[node name="BossDoor" parent="Bossroom" instance=ExtResource( 21 )]
+position = Vector2( 10864, -1760 )
+script = ExtResource( 19 )
+
+[node name="BossDoorTrigger" parent="Bossroom" instance=ExtResource( 18 )]
+position = Vector2( 10928, -1784 )
+monitorable = true
+door = NodePath("../BossDoor")
+boss = NodePath("../Level2Boss")
+
+[node name="CollisionShape2D" parent="Bossroom/BossDoorTrigger" index="0"]
+position = Vector2( 16, 24 )
+shape = SubResource( 20 )
+one_way_collision_margin = 0.0
+
+[editable path="Bossroom/BossDoorTrigger"]
