@@ -8,7 +8,8 @@ extends Node2D
 -Dead when Health depletes
 """""
 
-export var health = 2500
+export var health = 500
+
 
 export var boss_name = "SkeletonKing"
 
