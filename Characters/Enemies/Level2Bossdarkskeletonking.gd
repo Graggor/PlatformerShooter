@@ -8,7 +8,8 @@ extends Node2D
 -Dead when Health depletes
 """""
 
-export var health = 2500
+export var health = 500
+
 
 export var boss_name = "SkeletonKing"
 
@@ -40,9 +41,12 @@ func _ready():
 	connect("boss_died", gui, "_on_boss_disappeared")
 	emit_signal("boss_max_health_changed", health)
 	emit_signal("boss_health_changed", health)
+	for sword in $Swords.get_children():
+		sword.set_owner(self)
 
 func take_damage(amount):
-	if health < 0:
+	if health <= 0:
+		_reset_attack()
 		_anim_tree.set_condition("death" , true )
 		emit_signal("boss_died")
 		return

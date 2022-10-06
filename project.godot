@@ -33,13 +33,19 @@ _global_script_classes=[ {
 "class": "Level",
 "language": "GDScript",
 "path": "res://Levels/Level.gd"
+}, {
+"base": "Area2D",
+"class": "SwordHitBox",
+"language": "GDScript",
+"path": "res://Items/Weapons/lvl2SwordHitBox.gd"
 } ]
 _global_script_class_icons={
 "Enemy": "",
 "Gun": "",
 "HitBox": "",
 "HurtBox": "",
-"Level": ""
+"Level": "",
+"SwordHitBox": ""
 }
 
 [application]

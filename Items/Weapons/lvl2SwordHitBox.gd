@@ -1,4 +1,4 @@
-class_name HitBox
+class_name SwordHitBox
 extends Area2D
 
 # A HitBox attaches to something that can hit someone else, like a bullet.
