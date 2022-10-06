@@ -1,14 +1,16 @@
 extends Node2D
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+func _process(delta):
+	if is_visible():
+		enable()
+	else:
+		disable()
 
 func set_owner(new_owner):
 	$HitBox.owner = new_owner
+
+func enable():
+	$HitBox/CollisionShape2D.disabled = false
+
+func disable():
+	$HitBox/CollisionShape2D.disabled = true

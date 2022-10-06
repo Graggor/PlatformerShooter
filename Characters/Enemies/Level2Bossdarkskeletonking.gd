@@ -89,6 +89,3 @@ func _reset_move():
 func _on_Door_isClosed():
 	emit_signal("boss_appeared", boss_name)
 	_anim_tree.set_condition("Setup", true )
-
-
-

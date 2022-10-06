@@ -2326,7 +2326,7 @@ states/superattack/node = SubResource( 42 )
 states/superattack/position = Vector2( -298, -400.677 )
 transitions = [ "appear", "movetocenter", SubResource( 45 ), "movetocenter", "idle", SubResource( 46 ), "idle", "move", SubResource( 47 ), "move", "idle", SubResource( 48 ), "idle", "Swordattack", SubResource( 49 ), "idle", "superattack", SubResource( 50 ), "Swordattack", "idle", SubResource( 59 ), "superattack", "idle", SubResource( 60 ), "idle", "death", SubResource( 61 ), "superattack", "death", SubResource( 62 ), "move", "death", SubResource( 63 ), "Swordattack", "death", SubResource( 64 ), "SETUP", "appear", SubResource( 66 ) ]
 start_node = "SETUP"
-graph_offset = Vector2( -1169.41, -308.9 )
+graph_offset = Vector2( -1074.41, -408.9 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=22]
 
