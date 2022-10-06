@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Sprites/World/Environment/Sluitdeur.png" type="Texture" id=1]
+[ext_resource path="res://Levels/Components/BossDoor.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 5, 31.5 )
@@ -116,6 +117,7 @@ tracks/1/keys = {
 }
 
 [node name="BossDoor" type="StaticBody2D"]
+script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 1, 2 )
