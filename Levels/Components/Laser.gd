@@ -4,13 +4,18 @@ export var laser_width = 10
 
 var is_casting = false setget set_is_casting
 export var cast_at_start = false
+export var pulsing = false
+export var pulse_interval = 1.0
 onready var hitbox = $HitBox
+onready var pulse_timer = $PulseTimer
 
 func _ready():
 	hitbox.owner = owner
 	set_physics_process(false)
 	$Line2D.points[1] = Vector2.ZERO
 	set_is_casting(cast_at_start)
+	if pulsing:
+		pulse_timer.start(pulse_interval)
 
 func _physics_process(delta):
 	var cast_point = cast_to
@@ -48,3 +53,7 @@ func disappear():
 	$Tween.stop_all()
 	$Tween.interpolate_property($Line2D, "width", laser_width, 0, 0.1)
 	$Tween.start()
+
+
+func _on_PulseTimer_timeout():
+	set_is_casting(!is_casting)
