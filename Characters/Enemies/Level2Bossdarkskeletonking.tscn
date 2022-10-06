@@ -145,7 +145,7 @@ tracks/10/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("sword:position")
+tracks/11/path = NodePath("Swords/sword:position")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/imported = false
@@ -157,7 +157,7 @@ tracks/11/keys = {
 "values": [ Vector2( -64, -24 ) ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("sword2:position")
+tracks/12/path = NodePath("Swords/sword2:position")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/imported = false
@@ -169,7 +169,7 @@ tracks/12/keys = {
 "values": [ Vector2( 64, -24 ) ]
 }
 tracks/13/type = "value"
-tracks/13/path = NodePath("sword2:rotation_degrees")
+tracks/13/path = NodePath("Swords/sword2:rotation_degrees")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/imported = false
@@ -181,7 +181,7 @@ tracks/13/keys = {
 "values": [ -90.0 ]
 }
 tracks/14/type = "value"
-tracks/14/path = NodePath("sword:rotation_degrees")
+tracks/14/path = NodePath("Swords/sword:rotation_degrees")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/imported = false
@@ -193,7 +193,7 @@ tracks/14/keys = {
 "values": [ 0.0 ]
 }
 tracks/15/type = "value"
-tracks/15/path = NodePath("sword:visible")
+tracks/15/path = NodePath("Swords/sword:visible")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/imported = false
@@ -205,7 +205,7 @@ tracks/15/keys = {
 "values": [ false ]
 }
 tracks/16/type = "value"
-tracks/16/path = NodePath("sword2:visible")
+tracks/16/path = NodePath("Swords/sword2:visible")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/imported = false
@@ -229,7 +229,7 @@ tracks/17/keys = {
 "values": [ false ]
 }
 tracks/18/type = "value"
-tracks/18/path = NodePath("sword3:position")
+tracks/18/path = NodePath("Swords/sword3:position")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/imported = false
@@ -241,7 +241,7 @@ tracks/18/keys = {
 "values": [ Vector2( 48, -8 ) ]
 }
 tracks/19/type = "value"
-tracks/19/path = NodePath("sword3:rotation_degrees")
+tracks/19/path = NodePath("Swords/sword3:rotation_degrees")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/imported = false
@@ -253,7 +253,7 @@ tracks/19/keys = {
 "values": [ 45.0 ]
 }
 tracks/20/type = "value"
-tracks/20/path = NodePath("sword3:visible")
+tracks/20/path = NodePath("Swords/sword3:visible")
 tracks/20/interp = 1
 tracks/20/loop_wrap = true
 tracks/20/imported = false
@@ -265,7 +265,7 @@ tracks/20/keys = {
 "values": [ false ]
 }
 tracks/21/type = "value"
-tracks/21/path = NodePath("sword4:position")
+tracks/21/path = NodePath("Swords/sword4:position")
 tracks/21/interp = 1
 tracks/21/loop_wrap = true
 tracks/21/imported = false
@@ -277,7 +277,7 @@ tracks/21/keys = {
 "values": [ Vector2( 48, -32 ) ]
 }
 tracks/22/type = "value"
-tracks/22/path = NodePath("sword4:rotation_degrees")
+tracks/22/path = NodePath("Swords/sword4:rotation_degrees")
 tracks/22/interp = 1
 tracks/22/loop_wrap = true
 tracks/22/imported = false
@@ -289,7 +289,7 @@ tracks/22/keys = {
 "values": [ 45.0 ]
 }
 tracks/23/type = "value"
-tracks/23/path = NodePath("sword4:visible")
+tracks/23/path = NodePath("Swords/sword4:visible")
 tracks/23/interp = 1
 tracks/23/loop_wrap = true
 tracks/23/imported = false
@@ -301,7 +301,7 @@ tracks/23/keys = {
 "values": [ false ]
 }
 tracks/24/type = "value"
-tracks/24/path = NodePath("sword5:visible")
+tracks/24/path = NodePath("Swords/sword5:visible")
 tracks/24/interp = 1
 tracks/24/loop_wrap = true
 tracks/24/imported = false
@@ -313,7 +313,7 @@ tracks/24/keys = {
 "values": [ false ]
 }
 tracks/25/type = "value"
-tracks/25/path = NodePath("sword5:rotation_degrees")
+tracks/25/path = NodePath("Swords/sword5:rotation_degrees")
 tracks/25/interp = 1
 tracks/25/loop_wrap = true
 tracks/25/imported = false
@@ -325,7 +325,7 @@ tracks/25/keys = {
 "values": [ -45.0 ]
 }
 tracks/26/type = "value"
-tracks/26/path = NodePath("sword5:position")
+tracks/26/path = NodePath("Swords/sword5:position")
 tracks/26/interp = 1
 tracks/26/loop_wrap = true
 tracks/26/imported = false
@@ -337,7 +337,7 @@ tracks/26/keys = {
 "values": [ Vector2( 96, -128 ) ]
 }
 tracks/27/type = "value"
-tracks/27/path = NodePath("sword6:visible")
+tracks/27/path = NodePath("Swords/sword6:visible")
 tracks/27/interp = 1
 tracks/27/loop_wrap = true
 tracks/27/imported = false
@@ -349,7 +349,7 @@ tracks/27/keys = {
 "values": [ false ]
 }
 tracks/28/type = "value"
-tracks/28/path = NodePath("sword6:rotation_degrees")
+tracks/28/path = NodePath("Swords/sword6:rotation_degrees")
 tracks/28/interp = 1
 tracks/28/loop_wrap = true
 tracks/28/imported = false
@@ -361,7 +361,7 @@ tracks/28/keys = {
 "values": [ -45.0 ]
 }
 tracks/29/type = "value"
-tracks/29/path = NodePath("sword6:position")
+tracks/29/path = NodePath("Swords/sword6:position")
 tracks/29/interp = 1
 tracks/29/loop_wrap = true
 tracks/29/imported = false
@@ -373,7 +373,7 @@ tracks/29/keys = {
 "values": [ Vector2( -96, -128 ) ]
 }
 tracks/30/type = "value"
-tracks/30/path = NodePath("sword7:visible")
+tracks/30/path = NodePath("Swords/sword7:visible")
 tracks/30/interp = 1
 tracks/30/loop_wrap = true
 tracks/30/imported = false
@@ -385,7 +385,7 @@ tracks/30/keys = {
 "values": [ false ]
 }
 tracks/31/type = "value"
-tracks/31/path = NodePath("sword7:rotation_degrees")
+tracks/31/path = NodePath("Swords/sword7:rotation_degrees")
 tracks/31/interp = 1
 tracks/31/loop_wrap = true
 tracks/31/imported = false
@@ -397,7 +397,7 @@ tracks/31/keys = {
 "values": [ -45.0 ]
 }
 tracks/32/type = "value"
-tracks/32/path = NodePath("sword7:position")
+tracks/32/path = NodePath("Swords/sword7:position")
 tracks/32/interp = 1
 tracks/32/loop_wrap = true
 tracks/32/imported = false
@@ -409,7 +409,7 @@ tracks/32/keys = {
 "values": [ Vector2( -160, -128 ) ]
 }
 tracks/33/type = "value"
-tracks/33/path = NodePath("sword8:visible")
+tracks/33/path = NodePath("Swords/sword8:visible")
 tracks/33/interp = 1
 tracks/33/loop_wrap = true
 tracks/33/imported = false
@@ -421,7 +421,7 @@ tracks/33/keys = {
 "values": [ false ]
 }
 tracks/34/type = "value"
-tracks/34/path = NodePath("sword8:position")
+tracks/34/path = NodePath("Swords/sword8:position")
 tracks/34/interp = 1
 tracks/34/loop_wrap = true
 tracks/34/imported = false
@@ -433,7 +433,7 @@ tracks/34/keys = {
 "values": [ Vector2( 160, -128 ) ]
 }
 tracks/35/type = "value"
-tracks/35/path = NodePath("sword8:rotation_degrees")
+tracks/35/path = NodePath("Swords/sword8:rotation_degrees")
 tracks/35/interp = 1
 tracks/35/loop_wrap = true
 tracks/35/imported = false
@@ -445,7 +445,7 @@ tracks/35/keys = {
 "values": [ -45.0 ]
 }
 tracks/36/type = "value"
-tracks/36/path = NodePath("sword9:position")
+tracks/36/path = NodePath("Swords/sword9:position")
 tracks/36/interp = 1
 tracks/36/loop_wrap = true
 tracks/36/imported = false
@@ -457,7 +457,7 @@ tracks/36/keys = {
 "values": [ Vector2( -24, -32 ) ]
 }
 tracks/37/type = "value"
-tracks/37/path = NodePath("sword9:rotation_degrees")
+tracks/37/path = NodePath("Swords/sword9:rotation_degrees")
 tracks/37/interp = 1
 tracks/37/loop_wrap = true
 tracks/37/imported = false
@@ -469,7 +469,7 @@ tracks/37/keys = {
 "values": [ -45.0 ]
 }
 tracks/38/type = "value"
-tracks/38/path = NodePath("sword9:visible")
+tracks/38/path = NodePath("Swords/sword9:visible")
 tracks/38/interp = 1
 tracks/38/loop_wrap = true
 tracks/38/imported = false
@@ -481,7 +481,7 @@ tracks/38/keys = {
 "values": [ false ]
 }
 tracks/39/type = "value"
-tracks/39/path = NodePath("sword10:visible")
+tracks/39/path = NodePath("Swords/sword10:visible")
 tracks/39/interp = 1
 tracks/39/loop_wrap = true
 tracks/39/imported = false
@@ -493,7 +493,7 @@ tracks/39/keys = {
 "values": [ false ]
 }
 tracks/40/type = "value"
-tracks/40/path = NodePath("sword10:position")
+tracks/40/path = NodePath("Swords/sword10:position")
 tracks/40/interp = 1
 tracks/40/loop_wrap = true
 tracks/40/imported = false
@@ -505,7 +505,7 @@ tracks/40/keys = {
 "values": [ Vector2( 24, -32 ) ]
 }
 tracks/41/type = "value"
-tracks/41/path = NodePath("sword10:rotation_degrees")
+tracks/41/path = NodePath("Swords/sword10:rotation_degrees")
 tracks/41/interp = 1
 tracks/41/loop_wrap = true
 tracks/41/imported = false
@@ -545,7 +545,7 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("sword:visible")
+tracks/2/path = NodePath("Swords/sword:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -557,7 +557,7 @@ tracks/2/keys = {
 "values": [ false, false ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("sword2:visible")
+tracks/3/path = NodePath("Swords/sword2:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -635,7 +635,7 @@ tracks/4/keys = {
 } ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("sword:position")
+tracks/5/path = NodePath("Swords/sword:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -647,7 +647,7 @@ tracks/5/keys = {
 "values": [ Vector2( -64, 30 ), Vector2( -96, 30 ), Vector2( -136, 30 ), Vector2( -150, 30 ), Vector2( -175, 30 ), Vector2( -190, 28.5 ), Vector2( -64, 24 ) ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("sword2:position")
+tracks/6/path = NodePath("Swords/sword2:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -659,7 +659,7 @@ tracks/6/keys = {
 "values": [ Vector2( 64, 30 ), Vector2( 96, 30 ), Vector2( 136, 30 ), Vector2( 150, 30 ), Vector2( 175, 30 ), Vector2( 190, 30 ), Vector2( 64, 30 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("sword2:rotation_degrees")
+tracks/7/path = NodePath("Swords/sword2:rotation_degrees")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -671,7 +671,7 @@ tracks/7/keys = {
 "values": [ -90.0, -180.0, -360.0, -450.0, -540.0, -90.0 ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("sword:rotation_degrees")
+tracks/8/path = NodePath("Swords/sword:rotation_degrees")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -683,7 +683,7 @@ tracks/8/keys = {
 "values": [ 0.0, 90.0, 270.0, 360.0, 450.0, 0.0 ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("sword:visible")
+tracks/9/path = NodePath("Swords/sword:visible")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
@@ -695,7 +695,7 @@ tracks/9/keys = {
 "values": [ true, true ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("sword2:visible")
+tracks/10/path = NodePath("Swords/sword2:visible")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/imported = false
@@ -707,7 +707,7 @@ tracks/10/keys = {
 "values": [ true, true ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("sword3:visible")
+tracks/11/path = NodePath("Swords/sword3:visible")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/imported = false
@@ -719,7 +719,7 @@ tracks/11/keys = {
 "values": [ false, false ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("sword4:visible")
+tracks/12/path = NodePath("Swords/sword4:visible")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/imported = false
@@ -743,7 +743,7 @@ tracks/13/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 0, 0 ) ]
 }
 tracks/14/type = "value"
-tracks/14/path = NodePath("sword5:visible")
+tracks/14/path = NodePath("Swords/sword5:visible")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/imported = false
@@ -755,7 +755,7 @@ tracks/14/keys = {
 "values": [ false, false ]
 }
 tracks/15/type = "value"
-tracks/15/path = NodePath("sword6:visible")
+tracks/15/path = NodePath("Swords/sword6:visible")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/imported = false
@@ -767,7 +767,7 @@ tracks/15/keys = {
 "values": [ false, false ]
 }
 tracks/16/type = "value"
-tracks/16/path = NodePath("sword7:visible")
+tracks/16/path = NodePath("Swords/sword7:visible")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/imported = false
@@ -779,7 +779,7 @@ tracks/16/keys = {
 "values": [ false, false ]
 }
 tracks/17/type = "value"
-tracks/17/path = NodePath("sword8:visible")
+tracks/17/path = NodePath("Swords/sword8:visible")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/imported = false
@@ -791,7 +791,7 @@ tracks/17/keys = {
 "values": [ false, false ]
 }
 tracks/18/type = "value"
-tracks/18/path = NodePath("sword9:visible")
+tracks/18/path = NodePath("Swords/sword9:visible")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/imported = false
@@ -803,7 +803,7 @@ tracks/18/keys = {
 "values": [ false, false ]
 }
 tracks/19/type = "value"
-tracks/19/path = NodePath("sword10:visible")
+tracks/19/path = NodePath("Swords/sword10:visible")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/imported = false
@@ -907,7 +907,7 @@ tracks/5/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( -125, -125 ), Vector2( -125, -125 ), Vector2( 125, -125 ), Vector2( 125, -125 ), Vector2( 0, -125 ), Vector2( 0, -125 ) ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("sword:visible")
+tracks/6/path = NodePath("Swords/sword:visible")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -919,7 +919,7 @@ tracks/6/keys = {
 "values": [ false, false ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("sword2:visible")
+tracks/7/path = NodePath("Swords/sword2:visible")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -931,7 +931,7 @@ tracks/7/keys = {
 "values": [ false, false ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("sword3:visible")
+tracks/8/path = NodePath("Swords/sword3:visible")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -943,7 +943,7 @@ tracks/8/keys = {
 "values": [ false, false ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("sword4:visible")
+tracks/9/path = NodePath("Swords/sword4:visible")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
@@ -955,7 +955,7 @@ tracks/9/keys = {
 "values": [ false, false ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("sword5:visible")
+tracks/10/path = NodePath("Swords/sword5:visible")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/imported = false
@@ -967,7 +967,7 @@ tracks/10/keys = {
 "values": [ false, false ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("sword6:visible")
+tracks/11/path = NodePath("Swords/sword6:visible")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/imported = false
@@ -979,7 +979,7 @@ tracks/11/keys = {
 "values": [ false, false ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("sword7:visible")
+tracks/12/path = NodePath("Swords/sword7:visible")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/imported = false
@@ -991,7 +991,7 @@ tracks/12/keys = {
 "values": [ false, false ]
 }
 tracks/13/type = "value"
-tracks/13/path = NodePath("sword8:visible")
+tracks/13/path = NodePath("Swords/sword8:visible")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/imported = false
@@ -1003,7 +1003,7 @@ tracks/13/keys = {
 "values": [ false, false ]
 }
 tracks/14/type = "value"
-tracks/14/path = NodePath("sword9:visible")
+tracks/14/path = NodePath("Swords/sword9:visible")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/imported = false
@@ -1015,7 +1015,7 @@ tracks/14/keys = {
 "values": [ false, false ]
 }
 tracks/15/type = "value"
-tracks/15/path = NodePath("sword10:visible")
+tracks/15/path = NodePath("Swords/sword10:visible")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/imported = false
@@ -1091,7 +1091,7 @@ tracks/4/keys = {
 "values": [ Color( 1, 1, 1, 0.882353 ), Color( 1, 1, 1, 0.882353 ), Color( 1, 1, 1, 0 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("sword:visible")
+tracks/5/path = NodePath("Swords/sword:visible")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -1103,7 +1103,7 @@ tracks/5/keys = {
 "values": [ false ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("sword2:visible")
+tracks/6/path = NodePath("Swords/sword2:visible")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -1115,7 +1115,7 @@ tracks/6/keys = {
 "values": [ false, false ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("sword3:visible")
+tracks/7/path = NodePath("Swords/sword3:visible")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -1127,7 +1127,7 @@ tracks/7/keys = {
 "values": [ false, false ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("sword4:visible")
+tracks/8/path = NodePath("Swords/sword4:visible")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -1217,7 +1217,7 @@ tracks/5/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("sword:visible")
+tracks/6/path = NodePath("Swords/sword:visible")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -1229,7 +1229,7 @@ tracks/6/keys = {
 "values": [ false, false ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("sword2:visible")
+tracks/7/path = NodePath("Swords/sword2:visible")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -1241,7 +1241,7 @@ tracks/7/keys = {
 "values": [ false, false ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("sword3:visible")
+tracks/8/path = NodePath("Swords/sword3:visible")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -1253,7 +1253,7 @@ tracks/8/keys = {
 "values": [ false, false ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("sword4:visible")
+tracks/9/path = NodePath("Swords/sword4:visible")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
@@ -1265,7 +1265,7 @@ tracks/9/keys = {
 "values": [ false, false ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("sword5:visible")
+tracks/10/path = NodePath("Swords/sword5:visible")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/imported = false
@@ -1277,7 +1277,7 @@ tracks/10/keys = {
 "values": [ false, false ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("sword6:visible")
+tracks/11/path = NodePath("Swords/sword6:visible")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/imported = false
@@ -1289,7 +1289,7 @@ tracks/11/keys = {
 "values": [ false, false ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("sword7:visible")
+tracks/12/path = NodePath("Swords/sword7:visible")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/imported = false
@@ -1301,7 +1301,7 @@ tracks/12/keys = {
 "values": [ false, false ]
 }
 tracks/13/type = "value"
-tracks/13/path = NodePath("sword8:visible")
+tracks/13/path = NodePath("Swords/sword8:visible")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/imported = false
@@ -1313,7 +1313,7 @@ tracks/13/keys = {
 "values": [ false, false ]
 }
 tracks/14/type = "value"
-tracks/14/path = NodePath("sword9:visible")
+tracks/14/path = NodePath("Swords/sword9:visible")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/imported = false
@@ -1325,7 +1325,7 @@ tracks/14/keys = {
 "values": [ false, false ]
 }
 tracks/15/type = "value"
-tracks/15/path = NodePath("sword10:visible")
+tracks/15/path = NodePath("Swords/sword10:visible")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/imported = false
@@ -1404,7 +1404,7 @@ tracks/4/keys = {
 "values": [ false, false, true, false ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("sword2:position")
+tracks/5/path = NodePath("Swords/sword2:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -1416,7 +1416,7 @@ tracks/5/keys = {
 "values": [ Vector2( 48, 32 ), Vector2( 24, 32 ), Vector2( 25.2308, 32 ), Vector2( -16, 32 ), Vector2( -144, 32 ), Vector2( -192, 32 ), Vector2( -128, 32 ), Vector2( -104, 32 ), Vector2( -56, 32 ), Vector2( -3.8147e-06, 32 ), Vector2( 24, 32 ), Vector2( 64, 32 ) ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("sword2:rotation_degrees")
+tracks/6/path = NodePath("Swords/sword2:rotation_degrees")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -1428,7 +1428,7 @@ tracks/6/keys = {
 "values": [ 45.0, 45.0, 45.0, 45.0, 45.0, -135.0, -135.0, -135.0, -135.0, -135.0, -135.0 ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("sword2:visible")
+tracks/7/path = NodePath("Swords/sword2:visible")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -1440,7 +1440,7 @@ tracks/7/keys = {
 "values": [ false, false, true, true, false, true, false ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("sword:position")
+tracks/8/path = NodePath("Swords/sword:position")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -1452,7 +1452,7 @@ tracks/8/keys = {
 "values": [ Vector2( 48, 40 ), Vector2( 24, 40 ), Vector2( 25.2308, 40 ), Vector2( -16, 40 ), Vector2( -144, 40 ), Vector2( -192, 40 ), Vector2( -128, 40 ), Vector2( -104, 40 ), Vector2( -56, 40 ), Vector2( -7.62939e-06, 40 ), Vector2( 24, 40 ), Vector2( 64, 40 ) ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("sword:rotation_degrees")
+tracks/9/path = NodePath("Swords/sword:rotation_degrees")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
@@ -1464,7 +1464,7 @@ tracks/9/keys = {
 "values": [ 45.0, 45.0, 45.0, 45.0, 45.0, 45.0, -135.0, -135.0, -135.0, -135.0, -135.0, -135.0 ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("sword:visible")
+tracks/10/path = NodePath("Swords/sword:visible")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/imported = false
@@ -1476,7 +1476,7 @@ tracks/10/keys = {
 "values": [ false, false, true, true, false, true, false ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("sword3:position")
+tracks/11/path = NodePath("Swords/sword3:position")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/imported = false
@@ -1488,7 +1488,7 @@ tracks/11/keys = {
 "values": [ Vector2( 48, 24 ), Vector2( 24, 24 ), Vector2( 25.2308, 24 ), Vector2( -16, 24 ), Vector2( -144, 24 ), Vector2( -192, 24 ), Vector2( -128, 24 ), Vector2( -104, 24 ), Vector2( -56, 24 ), Vector2( -7.62939e-06, 24 ), Vector2( 24, 24 ), Vector2( 64, 24 ) ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("sword3:rotation_degrees")
+tracks/12/path = NodePath("Swords/sword3:rotation_degrees")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/imported = false
@@ -1500,7 +1500,7 @@ tracks/12/keys = {
 "values": [ 45.0, 45.0, 45.0, 45.0, 45.0, 45.0, -135.0, -135.0, -135.0, -135.0, -135.0, -135.0 ]
 }
 tracks/13/type = "value"
-tracks/13/path = NodePath("sword3:visible")
+tracks/13/path = NodePath("Swords/sword3:visible")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/imported = false
@@ -1512,7 +1512,7 @@ tracks/13/keys = {
 "values": [ false, false, true, false, true, false ]
 }
 tracks/14/type = "value"
-tracks/14/path = NodePath("sword4:position")
+tracks/14/path = NodePath("Swords/sword4:position")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/imported = false
@@ -1524,7 +1524,7 @@ tracks/14/keys = {
 "values": [ Vector2( 48, 16 ), Vector2( 24, 16 ), Vector2( 25.2308, 16 ), Vector2( -16, 16 ), Vector2( -144, 16 ), Vector2( -192, 16 ), Vector2( -128, 16 ), Vector2( -104, 16 ), Vector2( -56, 16 ), Vector2( -7.62939e-06, 16 ), Vector2( 24, 16 ), Vector2( 64, 16 ) ]
 }
 tracks/15/type = "value"
-tracks/15/path = NodePath("sword4:rotation_degrees")
+tracks/15/path = NodePath("Swords/sword4:rotation_degrees")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/imported = false
@@ -1536,7 +1536,7 @@ tracks/15/keys = {
 "values": [ 45.0, 45.0, 45.0, 45.0, 45.0, 45.0, -135.0, -135.0, -135.0, -135.0, -135.0, -135.0 ]
 }
 tracks/16/type = "value"
-tracks/16/path = NodePath("sword4:visible")
+tracks/16/path = NodePath("Swords/sword4:visible")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/imported = false
@@ -1548,7 +1548,7 @@ tracks/16/keys = {
 "values": [ false, false, true, false, true, false ]
 }
 tracks/17/type = "value"
-tracks/17/path = NodePath("sword5:visible")
+tracks/17/path = NodePath("Swords/sword5:visible")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/imported = false
@@ -1560,7 +1560,7 @@ tracks/17/keys = {
 "values": [ false, false ]
 }
 tracks/18/type = "value"
-tracks/18/path = NodePath("sword6:visible")
+tracks/18/path = NodePath("Swords/sword6:visible")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/imported = false
@@ -1572,7 +1572,7 @@ tracks/18/keys = {
 "values": [ false, false ]
 }
 tracks/19/type = "value"
-tracks/19/path = NodePath("sword7:visible")
+tracks/19/path = NodePath("Swords/sword7:visible")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/imported = false
@@ -1584,7 +1584,7 @@ tracks/19/keys = {
 "values": [ false, false ]
 }
 tracks/20/type = "value"
-tracks/20/path = NodePath("sword8:visible")
+tracks/20/path = NodePath("Swords/sword8:visible")
 tracks/20/interp = 1
 tracks/20/loop_wrap = true
 tracks/20/imported = false
@@ -1596,7 +1596,7 @@ tracks/20/keys = {
 "values": [ false, false ]
 }
 tracks/21/type = "value"
-tracks/21/path = NodePath("sword9:visible")
+tracks/21/path = NodePath("Swords/sword9:visible")
 tracks/21/interp = 1
 tracks/21/loop_wrap = true
 tracks/21/imported = false
@@ -1608,7 +1608,7 @@ tracks/21/keys = {
 "values": [ false, false ]
 }
 tracks/22/type = "value"
-tracks/22/path = NodePath("sword10:visible")
+tracks/22/path = NodePath("Swords/sword10:visible")
 tracks/22/interp = 1
 tracks/22/loop_wrap = true
 tracks/22/imported = false
@@ -1811,7 +1811,7 @@ tracks/6/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 0, -125 ), Vector2( 0, -125 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("sword:visible")
+tracks/7/path = NodePath("Swords/sword:visible")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -1823,7 +1823,7 @@ tracks/7/keys = {
 "values": [ false, false, true, false ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("sword2:visible")
+tracks/8/path = NodePath("Swords/sword2:visible")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -1835,7 +1835,7 @@ tracks/8/keys = {
 "values": [ false, false, true, false ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("sword3:visible")
+tracks/9/path = NodePath("Swords/sword3:visible")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
@@ -1847,7 +1847,7 @@ tracks/9/keys = {
 "values": [ false, false, true, false ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("sword4:visible")
+tracks/10/path = NodePath("Swords/sword4:visible")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/imported = false
@@ -1859,7 +1859,7 @@ tracks/10/keys = {
 "values": [ false, false, true, false ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("sword:position")
+tracks/11/path = NodePath("Swords/sword:position")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/imported = false
@@ -1871,7 +1871,7 @@ tracks/11/keys = {
 "values": [ Vector2( -64, -128 ), Vector2( -64, -104 ), Vector2( -64, -80 ), Vector2( -64, -64 ), Vector2( -64, -32 ), Vector2( -64, 72 ) ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("sword:rotation_degrees")
+tracks/12/path = NodePath("Swords/sword:rotation_degrees")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/imported = false
@@ -1883,7 +1883,7 @@ tracks/12/keys = {
 "values": [ -45.0, -45.0, -45.0, -45.0, -45.0, -45.0 ]
 }
 tracks/13/type = "value"
-tracks/13/path = NodePath("sword2:position")
+tracks/13/path = NodePath("Swords/sword2:position")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/imported = false
@@ -1895,7 +1895,7 @@ tracks/13/keys = {
 "values": [ Vector2( -128, -128 ), Vector2( -128, -104 ), Vector2( -128, -80 ), Vector2( -128, -64 ), Vector2( -128, -32 ), Vector2( -128, 72 ) ]
 }
 tracks/14/type = "value"
-tracks/14/path = NodePath("sword2:rotation_degrees")
+tracks/14/path = NodePath("Swords/sword2:rotation_degrees")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/imported = false
@@ -1907,7 +1907,7 @@ tracks/14/keys = {
 "values": [ -45.0, -45.0, -45.0, -45.0, -45.0, -45.0 ]
 }
 tracks/15/type = "value"
-tracks/15/path = NodePath("sword3:position")
+tracks/15/path = NodePath("Swords/sword3:position")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/imported = false
@@ -1919,7 +1919,7 @@ tracks/15/keys = {
 "values": [ Vector2( 64, -128 ), Vector2( 64, -104 ), Vector2( 64, -80 ), Vector2( 64, -64 ), Vector2( 64, -32 ), Vector2( 64, 72 ) ]
 }
 tracks/16/type = "value"
-tracks/16/path = NodePath("sword3:rotation_degrees")
+tracks/16/path = NodePath("Swords/sword3:rotation_degrees")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/imported = false
@@ -1931,7 +1931,7 @@ tracks/16/keys = {
 "values": [ -45.0, -45.0, -45.0, -45.0, -45.0, -45.0 ]
 }
 tracks/17/type = "value"
-tracks/17/path = NodePath("sword4:position")
+tracks/17/path = NodePath("Swords/sword4:position")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/imported = false
@@ -1943,7 +1943,7 @@ tracks/17/keys = {
 "values": [ Vector2( 128, -128 ), Vector2( 128, -104 ), Vector2( 128, -80 ), Vector2( 128, -64 ), Vector2( 128, -32 ), Vector2( 128, 72 ) ]
 }
 tracks/18/type = "value"
-tracks/18/path = NodePath("sword4:rotation_degrees")
+tracks/18/path = NodePath("Swords/sword4:rotation_degrees")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/imported = false
@@ -1955,7 +1955,7 @@ tracks/18/keys = {
 "values": [ -45.0, -45.0, -45.0, -45.0, -45.0, -45.0 ]
 }
 tracks/19/type = "value"
-tracks/19/path = NodePath("sword5:visible")
+tracks/19/path = NodePath("Swords/sword5:visible")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/imported = false
@@ -1967,7 +1967,7 @@ tracks/19/keys = {
 "values": [ false, false, true, false ]
 }
 tracks/20/type = "value"
-tracks/20/path = NodePath("sword5:rotation_degrees")
+tracks/20/path = NodePath("Swords/sword5:rotation_degrees")
 tracks/20/interp = 1
 tracks/20/loop_wrap = true
 tracks/20/imported = false
@@ -1979,7 +1979,7 @@ tracks/20/keys = {
 "values": [ -45.0, -45.0, -45.0, -45.0, -45.0, -45.0 ]
 }
 tracks/21/type = "value"
-tracks/21/path = NodePath("sword5:position")
+tracks/21/path = NodePath("Swords/sword5:position")
 tracks/21/interp = 1
 tracks/21/loop_wrap = true
 tracks/21/imported = false
@@ -1991,7 +1991,7 @@ tracks/21/keys = {
 "values": [ Vector2( 96, -128 ), Vector2( 96, -104 ), Vector2( 96, -80 ), Vector2( 96, -64 ), Vector2( 96, -32 ), Vector2( 96, 72 ) ]
 }
 tracks/22/type = "value"
-tracks/22/path = NodePath("sword6:visible")
+tracks/22/path = NodePath("Swords/sword6:visible")
 tracks/22/interp = 1
 tracks/22/loop_wrap = true
 tracks/22/imported = false
@@ -2003,7 +2003,7 @@ tracks/22/keys = {
 "values": [ false, false, true, false ]
 }
 tracks/23/type = "value"
-tracks/23/path = NodePath("sword6:rotation_degrees")
+tracks/23/path = NodePath("Swords/sword6:rotation_degrees")
 tracks/23/interp = 1
 tracks/23/loop_wrap = true
 tracks/23/imported = false
@@ -2015,7 +2015,7 @@ tracks/23/keys = {
 "values": [ -45.0, -45.0, -45.0, -45.0, -45.0, -45.0 ]
 }
 tracks/24/type = "value"
-tracks/24/path = NodePath("sword6:position")
+tracks/24/path = NodePath("Swords/sword6:position")
 tracks/24/interp = 1
 tracks/24/loop_wrap = true
 tracks/24/imported = false
@@ -2027,7 +2027,7 @@ tracks/24/keys = {
 "values": [ Vector2( -96, -128 ), Vector2( -96, -104 ), Vector2( -96, -80 ), Vector2( -96, -64 ), Vector2( -96, -32 ), Vector2( -96, 72 ) ]
 }
 tracks/25/type = "value"
-tracks/25/path = NodePath("sword7:visible")
+tracks/25/path = NodePath("Swords/sword7:visible")
 tracks/25/interp = 1
 tracks/25/loop_wrap = true
 tracks/25/imported = false
@@ -2039,7 +2039,7 @@ tracks/25/keys = {
 "values": [ false, false, true, false ]
 }
 tracks/26/type = "value"
-tracks/26/path = NodePath("sword7:rotation_degrees")
+tracks/26/path = NodePath("Swords/sword7:rotation_degrees")
 tracks/26/interp = 1
 tracks/26/loop_wrap = true
 tracks/26/imported = false
@@ -2051,7 +2051,7 @@ tracks/26/keys = {
 "values": [ -45.0, -45.0, -45.0, -45.0, -45.0, -45.0 ]
 }
 tracks/27/type = "value"
-tracks/27/path = NodePath("sword7:position")
+tracks/27/path = NodePath("Swords/sword7:position")
 tracks/27/interp = 1
 tracks/27/loop_wrap = true
 tracks/27/imported = false
@@ -2063,7 +2063,7 @@ tracks/27/keys = {
 "values": [ Vector2( -160, -128 ), Vector2( -160, -104 ), Vector2( -160, -80 ), Vector2( -160, -64 ), Vector2( -160, -32 ), Vector2( -160, 72 ) ]
 }
 tracks/28/type = "value"
-tracks/28/path = NodePath("sword8:visible")
+tracks/28/path = NodePath("Swords/sword8:visible")
 tracks/28/interp = 1
 tracks/28/loop_wrap = true
 tracks/28/imported = false
@@ -2075,7 +2075,7 @@ tracks/28/keys = {
 "values": [ false, false, true, false ]
 }
 tracks/29/type = "value"
-tracks/29/path = NodePath("sword8:position")
+tracks/29/path = NodePath("Swords/sword8:position")
 tracks/29/interp = 1
 tracks/29/loop_wrap = true
 tracks/29/imported = false
@@ -2087,7 +2087,7 @@ tracks/29/keys = {
 "values": [ Vector2( 160, -128 ), Vector2( 160, -104 ), Vector2( 160, -80 ), Vector2( 160, -64 ), Vector2( 160, 72 ) ]
 }
 tracks/30/type = "value"
-tracks/30/path = NodePath("sword8:rotation_degrees")
+tracks/30/path = NodePath("Swords/sword8:rotation_degrees")
 tracks/30/interp = 1
 tracks/30/loop_wrap = true
 tracks/30/imported = false
@@ -2099,7 +2099,7 @@ tracks/30/keys = {
 "values": [ -45.0, -45.0, -45.0, -45.0, -45.0, -45.0 ]
 }
 tracks/31/type = "value"
-tracks/31/path = NodePath("sword9:position")
+tracks/31/path = NodePath("Swords/sword9:position")
 tracks/31/interp = 1
 tracks/31/loop_wrap = true
 tracks/31/imported = false
@@ -2111,7 +2111,7 @@ tracks/31/keys = {
 "values": [ Vector2( -24, -32 ), Vector2( -24, 72 ) ]
 }
 tracks/32/type = "value"
-tracks/32/path = NodePath("sword9:rotation_degrees")
+tracks/32/path = NodePath("Swords/sword9:rotation_degrees")
 tracks/32/interp = 1
 tracks/32/loop_wrap = true
 tracks/32/imported = false
@@ -2123,7 +2123,7 @@ tracks/32/keys = {
 "values": [ -45.0, -45.0 ]
 }
 tracks/33/type = "value"
-tracks/33/path = NodePath("sword9:visible")
+tracks/33/path = NodePath("Swords/sword9:visible")
 tracks/33/interp = 1
 tracks/33/loop_wrap = true
 tracks/33/imported = false
@@ -2135,7 +2135,7 @@ tracks/33/keys = {
 "values": [ false, false, true, false ]
 }
 tracks/34/type = "value"
-tracks/34/path = NodePath("sword10:visible")
+tracks/34/path = NodePath("Swords/sword10:visible")
 tracks/34/interp = 1
 tracks/34/loop_wrap = true
 tracks/34/imported = false
@@ -2147,7 +2147,7 @@ tracks/34/keys = {
 "values": [ false, false, true, false ]
 }
 tracks/35/type = "value"
-tracks/35/path = NodePath("sword10:position")
+tracks/35/path = NodePath("Swords/sword10:position")
 tracks/35/interp = 1
 tracks/35/loop_wrap = true
 tracks/35/imported = false
@@ -2159,7 +2159,7 @@ tracks/35/keys = {
 "values": [ Vector2( 24, -32 ), Vector2( 24, 72 ) ]
 }
 tracks/36/type = "value"
-tracks/36/path = NodePath("sword10:rotation_degrees")
+tracks/36/path = NodePath("Swords/sword10:rotation_degrees")
 tracks/36/interp = 1
 tracks/36/loop_wrap = true
 tracks/36/imported = false
@@ -2326,7 +2326,7 @@ states/superattack/node = SubResource( 42 )
 states/superattack/position = Vector2( -298, -400.677 )
 transitions = [ "appear", "movetocenter", SubResource( 45 ), "movetocenter", "idle", SubResource( 46 ), "idle", "move", SubResource( 47 ), "move", "idle", SubResource( 48 ), "idle", "Swordattack", SubResource( 49 ), "idle", "superattack", SubResource( 50 ), "Swordattack", "idle", SubResource( 59 ), "superattack", "idle", SubResource( 60 ), "idle", "death", SubResource( 61 ), "superattack", "death", SubResource( 62 ), "move", "death", SubResource( 63 ), "Swordattack", "death", SubResource( 64 ), "SETUP", "appear", SubResource( 66 ) ]
 start_node = "SETUP"
-graph_offset = Vector2( -1289.41, -299.9 )
+graph_offset = Vector2( -1169.41, -308.9 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=22]
 
@@ -2370,6 +2370,7 @@ anims/vanish = SubResource( 7 )
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource( 58 )
 anim_player = NodePath("../AnimationPlayer")
+active = true
 parameters/playback = SubResource( 22 )
 parameters/conditions/Move = false
 parameters/conditions/Setup = false
@@ -2380,60 +2381,62 @@ script = ExtResource( 1 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="sword" parent="." instance=ExtResource( 6 )]
+[node name="Swords" type="Node2D" parent="."]
+
+[node name="sword" parent="Swords" instance=ExtResource( 6 )]
 visible = false
 position = Vector2( -64, -24 )
 scale = Vector2( 1.5, 1.5 )
 
-[node name="sword2" parent="." instance=ExtResource( 6 )]
+[node name="sword2" parent="Swords" instance=ExtResource( 6 )]
 visible = false
 position = Vector2( 64, -24 )
 rotation = -1.5708
 scale = Vector2( 1.5, 1.5 )
 
-[node name="sword3" parent="." instance=ExtResource( 6 )]
+[node name="sword3" parent="Swords" instance=ExtResource( 6 )]
 visible = false
 position = Vector2( 48, -8 )
 rotation = 0.785398
 scale = Vector2( 1.5, 1.5 )
 
-[node name="sword4" parent="." instance=ExtResource( 6 )]
+[node name="sword4" parent="Swords" instance=ExtResource( 6 )]
 visible = false
 position = Vector2( 48, -32 )
 rotation = 0.785398
 scale = Vector2( 1.5, 1.5 )
 
-[node name="sword5" parent="." instance=ExtResource( 6 )]
+[node name="sword5" parent="Swords" instance=ExtResource( 6 )]
 visible = false
 position = Vector2( 96, -128 )
 rotation = -0.785398
 scale = Vector2( 1.5, 1.5 )
 
-[node name="sword6" parent="." instance=ExtResource( 6 )]
+[node name="sword6" parent="Swords" instance=ExtResource( 6 )]
 visible = false
 position = Vector2( -96, -128 )
 rotation = -0.785398
 scale = Vector2( 1.5, 1.5 )
 
-[node name="sword7" parent="." instance=ExtResource( 6 )]
+[node name="sword7" parent="Swords" instance=ExtResource( 6 )]
 visible = false
 position = Vector2( -160, -128 )
 rotation = -0.785398
 scale = Vector2( 1.5, 1.5 )
 
-[node name="sword8" parent="." instance=ExtResource( 6 )]
+[node name="sword8" parent="Swords" instance=ExtResource( 6 )]
 visible = false
 position = Vector2( 160, -128 )
 rotation = -0.785398
 scale = Vector2( 1.5, 1.5 )
 
-[node name="sword9" parent="." instance=ExtResource( 6 )]
+[node name="sword9" parent="Swords" instance=ExtResource( 6 )]
 visible = false
 position = Vector2( -24, -32 )
 rotation = -0.785398
 scale = Vector2( 1.5, 1.5 )
 
-[node name="sword10" parent="." instance=ExtResource( 6 )]
+[node name="sword10" parent="Swords" instance=ExtResource( 6 )]
 visible = false
 position = Vector2( 24, -32 )
 rotation = -0.785398
