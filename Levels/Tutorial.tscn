@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Sprites/World/Tiles/stairsright.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/World/Tiles/stairsleft.png" type="Texture" id=2]
@@ -12,7 +12,6 @@
 [ext_resource path="res://Levels/Components/DeathZone.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Characters/Enemies/Enemy.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Characters/Player/Player.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Levels/Components/BossDoor.gd" type="Script" id=13]
 [ext_resource path="res://Characters/Enemies/TutorialBoss.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Levels/Components/Hiddenroom.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Levels/Components/PortalDestination.tscn" type="PackedScene" id=17]
@@ -303,7 +302,6 @@ scale = Vector2( 5, 5 )
 [node name="BossDoor" parent="Bossroom" instance=ExtResource( 6 )]
 position = Vector2( 5840, -544 )
 z_index = -1
-script = ExtResource( 13 )
 
 [node name="BossDoorTrigger" parent="Bossroom" instance=ExtResource( 4 )]
 door = NodePath("../BossDoor")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://Sprites/World/Tiles/stairsright.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/World/Tiles/stairsleft.png" type="Texture" id=2]
@@ -19,7 +19,6 @@
 [ext_resource path="res://Levels/Components/BossDoorTrigger.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Levels/Components/BossDoor.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Characters/Enemies/Level3Boss.tscn" type="PackedScene" id=19]
-[ext_resource path="res://Levels/Components/BossDoor.gd" type="Script" id=20]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
@@ -1328,7 +1327,6 @@ rotation = 1.5708
 
 [node name="BossDoor" parent="Bossroom" instance=ExtResource( 18 )]
 position = Vector2( 8347, 448 )
-script = ExtResource( 20 )
 
 [node name="BossDoorTrigger" parent="Bossroom" instance=ExtResource( 17 )]
 position = Vector2( 8344, 456 )
