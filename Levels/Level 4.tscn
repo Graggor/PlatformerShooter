@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Sprites/World/Tiles/stairsright.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/World/Tiles/stairsleft.png" type="Texture" id=2]
@@ -15,7 +15,6 @@
 [ext_resource path="res://Levels/Components/Gate.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Levels/Components/Lever.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Levels/Components/PathFollowPlatform.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Levels/Components/BossDoor.gd" type="Script" id=16]
 [ext_resource path="res://Characters/Enemies/Level4Boss.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Levels/Components/BossDoor.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Levels/Components/BossDoorTrigger.tscn" type="PackedScene" id=19]
@@ -1632,7 +1631,6 @@ curve = SubResource( 6 )
 
 [node name="BossDoor" parent="Bossroom" instance=ExtResource( 18 )]
 position = Vector2( 12059, -1536 )
-script = ExtResource( 16 )
 
 [node name="BossDoorTrigger" parent="Bossroom" instance=ExtResource( 19 )]
 door = NodePath("../BossDoor")
