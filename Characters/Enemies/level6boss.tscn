@@ -1,7 +1,8 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://Items/Weapons/HurtBox.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Characters/Bosses/level 6 boss/2dcaveman.png" type="Texture" id=2]
+[ext_resource path="res://Characters/Enemies/BossAnimationTree.gd" type="Script" id=3]
 [ext_resource path="res://Items/Weapons/ThrowingSpear.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Characters/Enemies/level6boss.gd" type="Script" id=5]
 
@@ -1074,6 +1075,7 @@ parameters/conditions/SpearAttack = false
 parameters/conditions/SpearThrow = false
 parameters/conditions/Superattack = false
 parameters/conditions/death = false
+script = ExtResource( 3 )
 
 [node name="ThrowingSpears" type="Node2D" parent="."]
 

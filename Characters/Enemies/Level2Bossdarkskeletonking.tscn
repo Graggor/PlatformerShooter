@@ -1,6 +1,6 @@
 [gd_scene load_steps=42 format=2]
 
-[ext_resource path="res://Characters/Enemies/AnimationTreelevel2boss.gd" type="Script" id=1]
+[ext_resource path="res://Characters/Enemies/BossAnimationTree.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/World/Environment/flash-bright-white-light-transparent-background-vector_506110-322.webp" type="Texture" id=2]
 [ext_resource path="res://Sprites/Characters/Bosses/Level 2 boss/2dlevel2boss.png" type="Texture" id=3]
 [ext_resource path="res://Characters/Enemies/Level2Bossdarkskeletonking.gd" type="Script" id=4]
