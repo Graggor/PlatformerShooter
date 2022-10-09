@@ -54,7 +54,7 @@ anchor_bottom = 1.0
 margin_left = 128.0
 margin_top = 177.0
 margin_right = 516.0
-margin_bottom = 310.0
+margin_bottom = 280.0
 color = Color( 0.356863, 0.113725, 0.447059, 1 )
 script = ExtResource( 1 )
 

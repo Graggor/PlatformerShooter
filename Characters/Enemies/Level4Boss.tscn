@@ -1,7 +1,7 @@
 [gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://Items/Weapons/HurtBox.gd" type="Script" id=1]
-[ext_resource path="res://Characters/Enemies/AnimationTreelevel4boss.gd" type="Script" id=2]
+[ext_resource path="res://Characters/Enemies/BossAnimationTree.gd" type="Script" id=2]
 [ext_resource path="res://Characters/Enemies/Level4Boss.gd" type="Script" id=3]
 [ext_resource path="res://Sprites/World/Environment/flash-bright-white-light-transparent-background-vector_506110-322.webp" type="Texture" id=4]
 [ext_resource path="res://Sprites/Characters/Bosses/level 4 boss/level4boss.png" type="Texture" id=5]
