@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=44 format=2]
 
 [ext_resource path="res://Items/Weapons/HurtBox.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Characters/Bosses/EyeBoss/bigeye.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Characters/Enemies/EyeBossLasers.gd" type="Script" id=4]
 [ext_resource path="res://Characters/Enemies/EyeBoss.gd" type="Script" id=5]
 [ext_resource path="res://Items/Weapons/HitBox.gd" type="Script" id=6]
+[ext_resource path="res://Characters/Enemies/AnimationTree.gd" type="Script" id=7]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 60.0
@@ -64,6 +65,7 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id=2]
 length = 0.001
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Lasers:rotation_degrees")
 tracks/0/interp = 1
@@ -170,7 +172,7 @@ tracks/8/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ true ]
+"values": [ false ]
 }
 
 [sub_resource type="Animation" id=24]
@@ -200,6 +202,18 @@ tracks/1/keys = {
 "update": 1,
 "values": [ false, true ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("HurtBox/CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=19]
 resource_name = "ZigZag"
@@ -227,6 +241,18 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 0, 0 ), Vector2( -384, -320 ), Vector2( 336, -376 ), Vector2( -384, -136 ), Vector2( 456, -64 ), Vector2( 0, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("HurtBox/CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
 }
 
 [sub_resource type="Animation" id=6]
@@ -256,6 +282,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("HurtBox/CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=7]
 resource_name = "idle"
@@ -284,6 +322,18 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ Vector2( 1, 1 ), Vector2( -1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("HurtBox/CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
 }
 
 [sub_resource type="Animation" id=5]
@@ -330,6 +380,18 @@ tracks/2/keys = {
 "update": 1,
 "values": [ 3 ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("HurtBox/CollisionShape2D:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=4]
 resource_name = "laser_right"
@@ -375,6 +437,24 @@ tracks/2/keys = {
 "update": 1,
 "values": [ 3 ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("HurtBox/CollisionShape2D:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="AnimationNodeAnimation" id=30]
+animation = "Death"
+
+[sub_resource type="AnimationNodeAnimation" id=38]
+animation = "RESET"
 
 [sub_resource type="AnimationNodeAnimation" id=25]
 animation = "SuperAttack"
@@ -426,22 +506,47 @@ auto_advance = true
 [sub_resource type="AnimationNodeStateMachineTransition" id=28]
 switch_mode = 2
 
+[sub_resource type="AnimationNodeStateMachineTransition" id=32]
+advance_condition = "death"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=33]
+advance_condition = "death"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=34]
+advance_condition = "death"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=35]
+advance_condition = "death"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=36]
+advance_condition = "death"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=37]
+advance_condition = "death"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=39]
+advance_condition = "Setup"
+
 [sub_resource type="AnimationNodeStateMachine" id=15]
+states/Death/node = SubResource( 30 )
+states/Death/position = Vector2( 671, -64 )
+states/RESET/node = SubResource( 38 )
+states/RESET/position = Vector2( -434, 98 )
 states/SuperAttack/node = SubResource( 25 )
-states/SuperAttack/position = Vector2( 252, 11 )
+states/SuperAttack/position = Vector2( 134, -64 )
 states/ZigZag/node = SubResource( 20 )
-states/ZigZag/position = Vector2( 106, 217 )
+states/ZigZag/position = Vector2( -33, 289 )
 states/angry_middle/node = SubResource( 8 )
-states/angry_middle/position = Vector2( 442, 76 )
+states/angry_middle/position = Vector2( 158, 98 )
 states/idle/node = SubResource( 9 )
-states/idle/position = Vector2( 93, 76 )
+states/idle/position = Vector2( -232, 98 )
 states/laser_left/node = SubResource( 10 )
-states/laser_left/position = Vector2( 332, 178 )
+states/laser_left/position = Vector2( 265, 280 )
 states/laser_right/node = SubResource( 11 )
-states/laser_right/position = Vector2( 570, 178 )
-transitions = [ "angry_middle", "laser_left", SubResource( 12 ), "angry_middle", "laser_right", SubResource( 13 ), "idle", "angry_middle", SubResource( 14 ), "laser_right", "idle", SubResource( 17 ), "laser_left", "idle", SubResource( 18 ), "idle", "ZigZag", SubResource( 21 ), "ZigZag", "idle", SubResource( 22 ), "SuperAttack", "idle", SubResource( 27 ), "angry_middle", "SuperAttack", SubResource( 28 ) ]
-start_node = "idle"
-graph_offset = Vector2( -441, -17 )
+states/laser_right/position = Vector2( 550, 280 )
+transitions = [ "angry_middle", "laser_left", SubResource( 12 ), "angry_middle", "laser_right", SubResource( 13 ), "idle", "angry_middle", SubResource( 14 ), "laser_right", "idle", SubResource( 17 ), "laser_left", "idle", SubResource( 18 ), "idle", "ZigZag", SubResource( 21 ), "ZigZag", "idle", SubResource( 22 ), "SuperAttack", "idle", SubResource( 27 ), "angry_middle", "SuperAttack", SubResource( 28 ), "SuperAttack", "Death", SubResource( 32 ), "idle", "Death", SubResource( 33 ), "ZigZag", "Death", SubResource( 34 ), "laser_left", "Death", SubResource( 35 ), "laser_right", "Death", SubResource( 36 ), "angry_middle", "Death", SubResource( 37 ), "RESET", "idle", SubResource( 39 ) ]
+start_node = "RESET"
+graph_offset = Vector2( -243, -65.8249 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=16]
 
@@ -462,7 +567,6 @@ script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
 shape = SubResource( 1 )
-disabled = true
 
 [node name="Lasers" type="Node2D" parent="."]
 script = ExtResource( 4 )
@@ -475,6 +579,7 @@ cast_to = Vector2( -1000, 0 )
 laser_width = 20
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "RESET"
 anims/Death = SubResource( 29 )
 anims/RESET = SubResource( 2 )
 anims/SuperAttack = SubResource( 24 )
@@ -491,9 +596,12 @@ wait_time = 10.0
 tree_root = SubResource( 15 )
 anim_player = NodePath("../AnimationPlayer")
 parameters/playback = SubResource( 16 )
+parameters/conditions/Setup = false
 parameters/conditions/attacking = false
+parameters/conditions/death = false
 parameters/conditions/left = false
 parameters/conditions/right = false
+script = ExtResource( 7 )
 
 [node name="SuperAttack" type="Area2D" parent="."]
 script = ExtResource( 6 )

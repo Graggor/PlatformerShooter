@@ -10,7 +10,7 @@ var min_jump_velocity
 var is_grounded
 var is_jumping = false
 
-var wallJump = 150
+var wallJump = 125
 var jumpWall = 200
 
 
