@@ -470,27 +470,27 @@ rotation = 1.5708
 position = Vector2( 240, 16 )
 rotation = 1.5708
 
-[node name="CheckPoints" type="Node" parent="."]
+[node name="Checkpoints" type="Node" parent="."]
 
-[node name="CheckPoint" parent="CheckPoints" instance=ExtResource( 8 )]
+[node name="CheckPoint" parent="Checkpoints" instance=ExtResource( 8 )]
 position = Vector2( 1520, -336 )
 
-[node name="CheckPoint2" parent="CheckPoints" instance=ExtResource( 8 )]
+[node name="CheckPoint2" parent="Checkpoints" instance=ExtResource( 8 )]
 position = Vector2( 4192, 720 )
 
-[node name="CheckPoint3" parent="CheckPoints" instance=ExtResource( 8 )]
+[node name="CheckPoint3" parent="Checkpoints" instance=ExtResource( 8 )]
 position = Vector2( 5008, -464 )
 
-[node name="CheckPoint4" parent="CheckPoints" instance=ExtResource( 8 )]
+[node name="CheckPoint4" parent="Checkpoints" instance=ExtResource( 8 )]
 position = Vector2( 7392, -1008 )
 
-[node name="CheckPoint5" parent="CheckPoints" instance=ExtResource( 8 )]
+[node name="CheckPoint5" parent="Checkpoints" instance=ExtResource( 8 )]
 position = Vector2( 11088, -1040 )
 
-[node name="CheckPoint6" parent="CheckPoints" instance=ExtResource( 8 )]
+[node name="CheckPoint6" parent="Checkpoints" instance=ExtResource( 8 )]
 position = Vector2( 13888, -1904 )
 
-[node name="CheckPoint7" parent="CheckPoints" instance=ExtResource( 8 )]
+[node name="CheckPoint7" parent="Checkpoints" instance=ExtResource( 8 )]
 position = Vector2( 14080, -2608 )
 
 [node name="MovingPlatforms" type="Node" parent="."]

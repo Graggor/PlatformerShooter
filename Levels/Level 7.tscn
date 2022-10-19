@@ -256,6 +256,8 @@ boss = NodePath("../level6boss")
 position = Vector2( 1584, -1472 )
 shape = SubResource( 10 )
 
+[node name="Checkpoints" type="Node" parent="."]
+
 [editable path="Bossroom1/EyeBoss/BossDoorTrigger"]
 [editable path="Bossroom2/BossDoorTrigger"]
 [editable path="Bossroom3/BossDoorTrigger"]

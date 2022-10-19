@@ -10,7 +10,7 @@ var player_spawn_location
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	checkpoints = $CheckPoints.get_children()
+	checkpoints = $Checkpoints.get_children()
 	for checkpoint in checkpoints:
 		checkpoint.connect("reached", self, "_on_checkpoint_reached")
 	player_spawn_location = get_node("Player").global_position
