@@ -1,13 +1,12 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://GameManager.gd" type="Script" id=1]
-[ext_resource path="res://Levels/Level1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Levels/Level 1.tscn" type="PackedScene" id=2]
 [ext_resource path="res://GUI/GUI.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Menus/MainMenu.tscn" type="PackedScene" id=4]
 
-[sub_resource type="Environment" id=1]
+[sub_resource type="Environment" id=7]
 background_mode = 4
-ambient_light_energy = 0.14
 glow_enabled = true
 glow_intensity = 0.5
 glow_blend_mode = 0
@@ -27,4 +26,13 @@ pause_mode = 1
 [node name="MainMenu" parent="." instance=ExtResource( 4 )]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 1 )
+environment = SubResource( 7 )
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="FadeRect" type="ColorRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color( 0, 0, 0, 1 )

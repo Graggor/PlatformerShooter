@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Characters/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Sprites/World/Tiles/2dtileblockpurple.png" type="Texture" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://Characters/Enemies/Level4Boss.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Characters/Enemies/level6boss.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Characters/Enemies/EyeBoss.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Levels/Level.gd" type="Script" id=14]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
@@ -91,6 +92,7 @@ resource_local_to_scene = true
 extents = Vector2( 48, 64 )
 
 [node name="Level 7" type="Node2D"]
+script = ExtResource( 14 )
 
 [node name="TileMap" type="TileMap" parent="." groups=["environment"]]
 tile_set = SubResource( 3 )
