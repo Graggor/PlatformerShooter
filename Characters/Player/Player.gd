@@ -10,9 +10,8 @@ var min_jump_velocity
 var is_grounded
 var is_jumping = false
 
-var wallJump = 125
+var wallJump = 150
 var jumpWall = 200
-
 
 var max_jump_height = 3.25 * unit_size
 var min_jump_height = 0.8 * unit_size
@@ -23,13 +22,15 @@ var snap = Vector2.ZERO
 onready var body = $Body
 var floaty_text_scene = preload("res://Characters/FloatingText.tscn")
 
-export var health = 200
+export var max_health = 200
+var health
 
 signal player_died
 signal player_health_changed
 signal player_max_health_changed
 
 func _ready():
+	health = max_health
 	gravity = 2 * max_jump_height / pow(jump_duration, 2)
 	max_jump_velocity = -sqrt(2 * gravity * max_jump_height)
 	min_jump_velocity = -sqrt(2 * gravity * min_jump_height)
@@ -100,10 +101,18 @@ func take_damage(amount):
 	floaty_text.text = amount
 	add_child(floaty_text)
 	emit_signal("player_health_changed", health)
+	if health <= 0:
+		die()
 
 func die():
 	emit_signal("player_died")
-	get_tree().reload_current_scene()
+	set_process(false)
+
+func respawn():
+	set_process(true)
+	health = max_health
+	emit_signal("player_max_health_changed", health)
+	emit_signal("player_health_changed", health)
 
 func nextToWall():
 	return nextToRightWall() or nextToLeftWall()
