@@ -109,6 +109,7 @@ func die():
 	set_process(false)
 
 func respawn():
+	$Camera2D.current = true
 	set_process(true)
 	health = max_health
 	emit_signal("player_max_health_changed", health)
