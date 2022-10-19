@@ -512,54 +512,6 @@ tracks/8/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ) ]
 }
-tracks/9/type = "value"
-tracks/9/path = NodePath("HurtBox:monitoring")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/10/type = "value"
-tracks/10/path = NodePath("HurtBox:monitorable")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/11/type = "value"
-tracks/11/path = NodePath("HurtBox:position")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/keys = {
-"times": PoolRealArray( 0, 0.2, 1.9, 2.4, 3.7, 4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 0, -32 ), Vector2( 232, -32 ), Vector2( 224, -32 ), Vector2( -224, -32 ), Vector2( -228, -32 ), Vector2( 0, -32 ) ]
-}
-tracks/12/type = "value"
-tracks/12/path = NodePath("HurtBox:visible")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/keys = {
-"times": PoolRealArray( 0, 4.3 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ true, true ]
-}
 
 [sub_resource type="Animation" id=13]
 resource_name = "SpearThrow"
@@ -838,18 +790,6 @@ tracks/9/keys = {
 "update": 0,
 "values": [ Vector2( 0, -32 ), Vector2( 0, -32 ) ]
 }
-tracks/10/type = "value"
-tracks/10/path = NodePath("HurtBox:visible")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/keys = {
-"times": PoolRealArray( 0, 1.4 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ true, true ]
-}
 
 [sub_resource type="Animation" id=10]
 resource_name = "death"
@@ -1089,7 +1029,7 @@ states/movetocenter/node = SubResource( 22 )
 states/movetocenter/position = Vector2( 449, 161 )
 transitions = [ "Appear", "movetocenter", SubResource( 24 ), "movetocenter", "Idle", SubResource( 25 ), "Idle", "death", SubResource( 26 ), "SpearThrow", "death", SubResource( 27 ), "Superattack", "death", SubResource( 28 ), "SpearAttack", "death", SubResource( 29 ), "Idle", "SpearAttack", SubResource( 30 ), "SpearAttack", "Idle", SubResource( 31 ), "Idle", "SpearThrow", SubResource( 32 ), "SpearThrow", "Idle", SubResource( 33 ), "Idle", "Superattack", SubResource( 34 ), "Superattack", "Idle", SubResource( 35 ), "RESET", "Appear", SubResource( 37 ) ]
 start_node = "RESET"
-graph_offset = Vector2( 0, -97.0385 )
+graph_offset = Vector2( 0, 30.1714 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=3]
 

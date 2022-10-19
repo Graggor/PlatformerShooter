@@ -34,7 +34,7 @@ remote_path = NodePath("../../KinematicBody2D")
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="." groups=["environment"]]
 position = Vector2( 37, 11 )
-collision_layer = 64
+collision_layer = 32
 motion/sync_to_physics = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]

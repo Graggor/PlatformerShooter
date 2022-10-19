@@ -1,12 +1,9 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Characters/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Levels/Components/ChangeLevelDoor.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Levels/BaseTileMap.tres" type="TileSet" id=3]
 [ext_resource path="res://DialogBox/DialogBox.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Sprites/World/Background/2dwhiteboard.png" type="Texture" id=5]
-[ext_resource path="res://Sprites/World/Environment/2dbankjemooi.png" type="Texture" id=6]
-[ext_resource path="res://Sprites/World/Environment/light.png" type="Texture" id=7]
 
 [node name="Inbetween" type="Node2D"]
 
@@ -15,37 +12,10 @@ tile_set = ExtResource( 3 )
 cell_size = Vector2( 32, 32 )
 collision_layer = 32
 format = 1
-tile_data = PoolIntArray( -589834, 5, 0, -589833, 5, 0, -589832, 5, 0, -589831, 5, 0, -589830, 5, 0, -589829, 5, 0, -589828, 5, 0, -589827, 5, 0, -589826, 5, 0, -589825, 5, 0, -655360, 5, 0, -655359, 5, 0, -655358, 5, 0, -655357, 5, 0, -655356, 5, 0, -655355, 5, 0, -655354, 5, 0, -655353, 5, 0, -655352, 5, 0, -655351, 5, 0, -524298, 5, 0, -589815, 5, 0, -458762, 5, 0, -524279, 5, 0, -393226, 5, 0, -458743, 5, 0, -327690, 5, 0, -393207, 5, 0, -262154, 5, 0, -327671, 5, 0, -196618, 5, 0, -262135, 5, 0, -131082, 5, 0, -196599, 5, 0, -65546, 5, 0, -131063, 5, 0, -10, 5, 0, -65527, 5, 0, 65526, 5, 0, 9, 5, 0, 131062, 5, 0, 131063, 5, 0, 131064, 5, 0, 131065, 5, 0, 131066, 5, 0, 131067, 5, 0, 131068, 5, 0, 131069, 5, 0, 131070, 5, 0, 131071, 5, 0, 65536, 5, 0, 65537, 5, 0, 65538, 5, 0, 65539, 5, 0, 65540, 5, 0, 65541, 5, 0, 65542, 5, 0, 65543, 5, 0, 65544, 5, 0, 65545, 5, 0 )
+tile_data = PoolIntArray( -327690, 0, 0, -327689, 0, 0, -327688, 0, 0, -327687, 0, 0, -327686, 0, 0, -327685, 0, 0, -327684, 0, 0, -327683, 0, 0, -327682, 0, 0, -327681, 0, 0, -393216, 0, 0, -393215, 0, 0, -393214, 0, 0, -393213, 0, 0, -393212, 0, 0, -393211, 0, 0, -393210, 0, 0, -393209, 0, 0, -393208, 0, 0, -393207, 0, 0, -262154, 0, 0, -327671, 0, 0, -196618, 0, 0, -262135, 0, 0, -131082, 0, 0, -196599, 0, 0, -65546, 0, 0, -131063, 0, 0, -10, 0, 0, -65527, 0, 0, 65526, 0, 0, 9, 0, 0, 131062, 0, 0, 131063, 0, 0, 131064, 0, 0, 131065, 0, 0, 131066, 0, 0, 131067, 0, 0, 131068, 0, 0, 131069, 0, 0, 131070, 0, 0, 131071, 0, 0, 65536, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 0, 0, 65540, 0, 0, 65541, 0, 0, 65542, 0, 0, 65543, 0, 0, 65544, 0, 0, 65545, 0, 0 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( -240, 16 )
-z_index = 1
-
-[node name="ParallaxBackground" type="ParallaxBackground" parent="Player"]
-
-[node name="ParallaxLayer4" type="ParallaxLayer" parent="Player/ParallaxBackground"]
-
-[node name="Sprite" type="Sprite" parent="Player/ParallaxBackground/ParallaxLayer4"]
-position = Vector2( 0, -189 )
-texture = ExtResource( 7 )
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="Player/ParallaxBackground"]
-
-[node name="Sprite" type="Sprite" parent="Player/ParallaxBackground/ParallaxLayer"]
-position = Vector2( 5, -111 )
-texture = ExtResource( 5 )
-
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="Player/ParallaxBackground"]
-
-[node name="Sprite" type="Sprite" parent="Player/ParallaxBackground/ParallaxLayer2"]
-position = Vector2( -152, 1 )
-texture = ExtResource( 6 )
-
-[node name="ParallaxLayer3" type="ParallaxLayer" parent="Player/ParallaxBackground"]
-
-[node name="Sprite" type="Sprite" parent="Player/ParallaxBackground/ParallaxLayer3"]
-position = Vector2( 113, 1 )
-texture = ExtResource( 6 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 0, -120 )
@@ -55,7 +25,7 @@ current = true
 position = Vector2( 232, 0 )
 
 [node name="DialogBox" parent="." instance=ExtResource( 4 )]
-margin_left = -312.0
-margin_top = -428.0
-margin_right = -312.0
-margin_bottom = -428.0
+margin_left = -320.0
+margin_top = -472.0
+margin_right = -320.0
+margin_bottom = -472.0

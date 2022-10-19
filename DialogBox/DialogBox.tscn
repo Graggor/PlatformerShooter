@@ -53,27 +53,26 @@ anchor_bottom = 1.0
 [node name="DialogBox" type="ColorRect" parent="."]
 margin_left = 128.0
 margin_top = 177.0
-margin_right = 505.0
-margin_bottom = 266.0
-color = Color( 0, 0, 0, 1 )
+margin_right = 516.0
+margin_bottom = 280.0
+color = Color( 0.356863, 0.113725, 0.447059, 1 )
 script = ExtResource( 1 )
 
 [node name="Name" type="RichTextLabel" parent="DialogBox"]
-margin_left = 2.0
+margin_left = 3.0
 margin_top = 3.0
-margin_right = 150.0
+margin_right = 115.0
 margin_bottom = 42.0
-text = "Commander  Salazar"
+text = "Spirit's Voice"
 
 [node name="Text" type="RichTextLabel" parent="DialogBox"]
 margin_left = 2.0
 margin_top = 43.0
 margin_right = 385.0
 margin_bottom = 130.0
-text = "                                 Congratulations!
-							
-						
-"
+text = "Welcome to [Insert name] 
+
+in this Tutorial youre gonna learn the basic movement and stuff you need to know"
 
 [node name="Indicator" type="Polygon2D" parent="DialogBox"]
 position = Vector2( 473, 161 )
