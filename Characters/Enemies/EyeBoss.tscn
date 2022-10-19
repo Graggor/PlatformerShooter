@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://Items/Weapons/HurtBox.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Characters/Bosses/EyeBoss/bigeye.png" type="Texture" id=2]
@@ -64,6 +64,7 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id=2]
 length = 0.001
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Lasers:rotation_degrees")
 tracks/0/interp = 1
@@ -376,6 +377,9 @@ tracks/2/keys = {
 "values": [ 3 ]
 }
 
+[sub_resource type="AnimationNodeAnimation" id=30]
+animation = "Death"
+
 [sub_resource type="AnimationNodeAnimation" id=25]
 animation = "SuperAttack"
 
@@ -426,22 +430,41 @@ auto_advance = true
 [sub_resource type="AnimationNodeStateMachineTransition" id=28]
 switch_mode = 2
 
+[sub_resource type="AnimationNodeStateMachineTransition" id=32]
+advance_condition = "death"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=33]
+advance_condition = "death"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=34]
+advance_condition = "death"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=35]
+advance_condition = "death"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=36]
+advance_condition = "death"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=37]
+advance_condition = "death"
+
 [sub_resource type="AnimationNodeStateMachine" id=15]
+states/Death/node = SubResource( 30 )
+states/Death/position = Vector2( 671, -64 )
 states/SuperAttack/node = SubResource( 25 )
-states/SuperAttack/position = Vector2( 252, 11 )
+states/SuperAttack/position = Vector2( 11, -64 )
 states/ZigZag/node = SubResource( 20 )
-states/ZigZag/position = Vector2( 106, 217 )
+states/ZigZag/position = Vector2( -33, 289 )
 states/angry_middle/node = SubResource( 8 )
-states/angry_middle/position = Vector2( 442, 76 )
+states/angry_middle/position = Vector2( 316, -4 )
 states/idle/node = SubResource( 9 )
-states/idle/position = Vector2( 93, 76 )
+states/idle/position = Vector2( 132, 114 )
 states/laser_left/node = SubResource( 10 )
-states/laser_left/position = Vector2( 332, 178 )
+states/laser_left/position = Vector2( 265, 280 )
 states/laser_right/node = SubResource( 11 )
-states/laser_right/position = Vector2( 570, 178 )
-transitions = [ "angry_middle", "laser_left", SubResource( 12 ), "angry_middle", "laser_right", SubResource( 13 ), "idle", "angry_middle", SubResource( 14 ), "laser_right", "idle", SubResource( 17 ), "laser_left", "idle", SubResource( 18 ), "idle", "ZigZag", SubResource( 21 ), "ZigZag", "idle", SubResource( 22 ), "SuperAttack", "idle", SubResource( 27 ), "angry_middle", "SuperAttack", SubResource( 28 ) ]
-start_node = "idle"
-graph_offset = Vector2( -441, -17 )
+states/laser_right/position = Vector2( 550, 280 )
+transitions = [ "angry_middle", "laser_left", SubResource( 12 ), "angry_middle", "laser_right", SubResource( 13 ), "idle", "angry_middle", SubResource( 14 ), "laser_right", "idle", SubResource( 17 ), "laser_left", "idle", SubResource( 18 ), "idle", "ZigZag", SubResource( 21 ), "ZigZag", "idle", SubResource( 22 ), "SuperAttack", "idle", SubResource( 27 ), "angry_middle", "SuperAttack", SubResource( 28 ), "SuperAttack", "Death", SubResource( 32 ), "idle", "Death", SubResource( 33 ), "ZigZag", "Death", SubResource( 34 ), "laser_left", "Death", SubResource( 35 ), "laser_right", "Death", SubResource( 36 ), "angry_middle", "Death", SubResource( 37 ) ]
+graph_offset = Vector2( -412, -45.8249 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=16]
 
@@ -452,7 +475,6 @@ radius = 0.01
 script = ExtResource( 5 )
 
 [node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( -1, 1 )
 texture = ExtResource( 2 )
 hframes = 8
 frame = 2
@@ -475,6 +497,7 @@ cast_to = Vector2( -1000, 0 )
 laser_width = 20
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "RESET"
 anims/Death = SubResource( 29 )
 anims/RESET = SubResource( 2 )
 anims/SuperAttack = SubResource( 24 )
@@ -492,6 +515,7 @@ tree_root = SubResource( 15 )
 anim_player = NodePath("../AnimationPlayer")
 parameters/playback = SubResource( 16 )
 parameters/conditions/attacking = false
+parameters/conditions/death = false
 parameters/conditions/left = false
 parameters/conditions/right = false
 

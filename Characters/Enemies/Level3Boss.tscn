@@ -443,6 +443,7 @@ animation = "RESET"
 animation = "SuperAttack"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=12]
+advance_condition = "Setup"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=13]
 switch_mode = 2
@@ -542,6 +543,7 @@ anim_player = NodePath("../AnimationPlayer")
 parameters/playback = SubResource( 16 )
 parameters/conditions/FireAttack = false
 parameters/conditions/MoveAttack = false
+parameters/conditions/Setup = false
 parameters/conditions/SuperAttack = false
 parameters/conditions/death = false
 script = ExtResource( 3 )
