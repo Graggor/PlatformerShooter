@@ -1,10 +1,12 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://Items/Weapons/HurtBox.gd" type="Script" id=1]
 [ext_resource path="res://Characters/Enemies/Level3Boss.gd" type="Script" id=2]
 [ext_resource path="res://Characters/Enemies/BossAnimationTree.gd" type="Script" id=3]
 [ext_resource path="res://Sprites/Characters/Bosses/Level 3 Boss/level3boss.png" type="Texture" id=4]
 [ext_resource path="res://Sprites/World/Environment/flash-bright-white-light-transparent-background-vector_506110-322.webp" type="Texture" id=5]
+[ext_resource path="res://Items/Weapons/FireBall.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Items/Weapons/FireWall.tscn" type="PackedScene" id=7]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Appear"
@@ -556,3 +558,13 @@ script = ExtResource( 1 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
 position = Vector2( 0, -16 )
 shape = SubResource( 17 )
+
+[node name="FireBalls" type="Node" parent="."]
+
+[node name="FireBall" parent="FireBalls" instance=ExtResource( 6 )]
+boss = NodePath("../..")
+
+[node name="FireWalls" type="Node" parent="."]
+
+[node name="FireWall" parent="FireWalls" instance=ExtResource( 7 )]
+position = Vector2( -32, -8 )

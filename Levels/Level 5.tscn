@@ -138,7 +138,7 @@ extents = Vector2( 48, 64 )
 
 [node name="Level 5" type="Node2D"]
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="TileMap" type="TileMap" parent="." groups=["environment"]]
 position = Vector2( 0, -64 )
 z_index = 1
 tile_set = SubResource( 5 )

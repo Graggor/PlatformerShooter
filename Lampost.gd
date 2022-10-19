@@ -1,17 +1,16 @@
-extends Area2D
+extends Node
 
-onready var area2D = $Area2D
 signal PlayerEntered
-
+export var flicker = true
 
 func _on_Area2D_body_entered(body):
 	if body.name == "Player":
-		$AnimationPlayer.play("Flashing")
+		if flicker:
+			$AnimationPlayer.play("Flashing")
+		else:
+			$AnimationPlayer.play("On")
 	emit_signal("PlayerEntered")
-	
-	
 
 func _on_Area2D_body_exited(body):
 	if body.name == "Player":
 		$AnimationPlayer.play("Off")
-	emit_signal("PlayerEntered")

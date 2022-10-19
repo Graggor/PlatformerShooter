@@ -92,7 +92,7 @@ extents = Vector2( 48, 64 )
 
 [node name="Level 7" type="Node2D"]
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="TileMap" type="TileMap" parent="." groups=["environment"]]
 tile_set = SubResource( 3 )
 cell_size = Vector2( 32, 32 )
 collision_layer = 32

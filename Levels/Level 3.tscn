@@ -494,7 +494,7 @@ extents = Vector2( 48, 64 )
 
 [node name="Level 3" type="Node2D"]
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="TileMap" type="TileMap" parent="." groups=["environment"]]
 tile_set = SubResource( 3 )
 cell_size = Vector2( 32, 32 )
 collision_layer = 32
@@ -1404,6 +1404,12 @@ zoom = Vector2( 0.8, 1 )
 position = Vector2( 8584, 224 )
 z_index = -1
 
+[node name="OpenDoorZone" parent="ToNextLevel/ToNextLevel" index="0"]
+position = Vector2( 344, 72 )
+
+[node name="CollisionShape2D" parent="ToNextLevel/ToNextLevel/OpenDoorZone" index="0"]
+position = Vector2( -192, -58 )
+
 [node name="ToNextLevelTrigger" parent="ToNextLevel/ToNextLevel" instance=ExtResource( 23 )]
 
 [node name="CollisionShape2D" parent="ToNextLevel/ToNextLevel/ToNextLevelTrigger" index="0"]
@@ -1421,4 +1427,5 @@ zoom = Vector2( 0.5, 0.9 )
 [editable path="Hiddenroom/Hiddenroom4"]
 [editable path="Hiddenroom/Hiddenroom5"]
 [editable path="Bossroom/BossDoorTrigger"]
+[editable path="ToNextLevel/ToNextLevel"]
 [editable path="ToNextLevel/ToNextLevel/ToNextLevelTrigger"]

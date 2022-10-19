@@ -12,11 +12,13 @@ signal boss_died
 var floaty_text_scene = preload("res://Characters/FloatingText.tscn")
 var attacks = ["laser_left", "laser_right"]
 onready var state_machine = $AnimationTree["parameters/playback"]
+onready var _anim_tree = $AnimationTree
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Timer.start()
+	$AnimationTree.active = true
 	var gui = get_node("/root/GameManager/GUI")
 	connect("boss_health_changed", gui, "_on_boss_health_changed")
 	connect("boss_max_health_changed", gui, "_on_boss_max_health_changed")
@@ -29,7 +31,7 @@ func _ready():
 
 func take_damage(amount):
 	if health <= 0:
-		state_machine.travel("death")
+		_anim_tree.set_condition("death", true )
 		emit_signal("boss_died")
 		return
 	
@@ -43,12 +45,15 @@ func take_damage(amount):
 	
 	floaty_text.text = amount
 	add_child(floaty_text)
-	
 
 
 func _on_Timer_timeout():
-	#randomize()
-	#var attack_number = randi()%2
-	#state_machine.travel(attacks[attack_number])
-	state_machine.travel("SuperAttack")
-	
+	if health > 0:
+		randomize()
+		var attack_number = randi()%2
+		state_machine.travel(attacks[attack_number])
+		#state_machine.travel("SuperAttack")
+
+func _on_Door_isClosed():
+	emit_signal("boss_appeared", boss_name)
+	_anim_tree.set_condition("Setup", true )
