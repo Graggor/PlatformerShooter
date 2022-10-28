@@ -1,7 +1,7 @@
 extends Node2D
 
 
-export var health = 500
+export var health = 100
 export var boss_name = "False Prophet"
 
 onready var _anim_tree = $AnimationTree

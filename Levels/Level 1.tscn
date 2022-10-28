@@ -599,6 +599,7 @@ pulse_interval = 2.0
 [node name="Lampost" parent="Lights" instance=ExtResource( 23 )]
 position = Vector2( -680, 272 )
 z_index = -1
+flicker = false
 
 [node name="Lampost2" parent="Lights" instance=ExtResource( 23 )]
 position = Vector2( -296, 272 )
@@ -607,6 +608,7 @@ z_index = -1
 [node name="Lampost3" parent="Lights" instance=ExtResource( 23 )]
 position = Vector2( 32, -48 )
 z_index = -1
+flicker = false
 
 [node name="Lampost4" parent="Lights" instance=ExtResource( 23 )]
 position = Vector2( 384, -48 )
@@ -615,6 +617,7 @@ z_index = -1
 [node name="Lampost5" parent="Lights" instance=ExtResource( 23 )]
 position = Vector2( 960, 240 )
 z_index = -1
+flicker = false
 
 [node name="Lampost6" parent="Lights" instance=ExtResource( 23 )]
 position = Vector2( 1784, -112 )
@@ -623,6 +626,7 @@ z_index = -1
 [node name="Lampost7" parent="Lights" instance=ExtResource( 23 )]
 position = Vector2( 1640, -368 )
 z_index = -1
+flicker = false
 
 [node name="Lampost8" parent="Lights" instance=ExtResource( 23 )]
 position = Vector2( 2024, -368 )
@@ -631,6 +635,7 @@ z_index = -1
 [node name="Lampost9" parent="Lights" instance=ExtResource( 23 )]
 position = Vector2( 2408, -368 )
 z_index = -1
+flicker = false
 
 [node name="Lampost10" parent="Lights" instance=ExtResource( 23 )]
 position = Vector2( 2720, -368 )
@@ -639,6 +644,7 @@ z_index = -1
 [node name="Lampost11" parent="Lights" instance=ExtResource( 23 )]
 position = Vector2( 2320, 112 )
 z_index = -1
+flicker = false
 
 [node name="Lampost12" parent="Lights" instance=ExtResource( 23 )]
 position = Vector2( 3848, 688 )
@@ -647,6 +653,7 @@ z_index = -1
 [node name="Lampost13" parent="Lights" instance=ExtResource( 23 )]
 position = Vector2( 4216, 688 )
 z_index = -1
+flicker = false
 
 [node name="Lampost14" parent="Lights" instance=ExtResource( 23 )]
 position = Vector2( 4464, 688 )
@@ -655,6 +662,7 @@ z_index = -1
 [node name="Lampost15" parent="Lights" instance=ExtResource( 23 )]
 position = Vector2( 4832, 496 )
 z_index = -1
+flicker = false
 
 [node name="Lampost16" parent="Lights" instance=ExtResource( 23 )]
 position = Vector2( 4672, 208 )
@@ -663,6 +671,7 @@ z_index = -1
 [node name="Lampost17" parent="Lights" instance=ExtResource( 23 )]
 position = Vector2( 4736, 48 )
 z_index = -1
+flicker = false
 
 [node name="Lampost18" parent="Lights" instance=ExtResource( 23 )]
 position = Vector2( 4960, -112 )
@@ -671,6 +680,7 @@ z_index = -1
 [node name="Lampost19" parent="Lights" instance=ExtResource( 23 )]
 position = Vector2( 4960, -272 )
 z_index = -1
+flicker = false
 
 [node name="Lampost20" parent="Lights" instance=ExtResource( 23 )]
 position = Vector2( 5424, -592 )
@@ -679,6 +689,7 @@ z_index = -1
 [node name="Lampost21" parent="Lights" instance=ExtResource( 23 )]
 position = Vector2( 5744, -592 )
 z_index = -1
+flicker = false
 
 [node name="Lampost22" parent="Lights" instance=ExtResource( 23 )]
 position = Vector2( 6064, -592 )
@@ -687,6 +698,7 @@ z_index = -1
 [node name="Lampost23" parent="Lights" instance=ExtResource( 23 )]
 position = Vector2( 6384, -592 )
 z_index = -1
+flicker = false
 
 [node name="Lampost24" parent="Lights" instance=ExtResource( 23 )]
 position = Vector2( 6704, -592 )
@@ -695,6 +707,7 @@ z_index = -1
 [node name="Lampost25" parent="Lights" instance=ExtResource( 23 )]
 position = Vector2( 6992, -112 )
 z_index = -1
+flicker = false
 
 [node name="Lampost26" parent="Lights" instance=ExtResource( 23 )]
 position = Vector2( 7384, -1040 )
@@ -703,6 +716,7 @@ z_index = -1
 [node name="Lampost27" parent="Lights" instance=ExtResource( 23 )]
 position = Vector2( 7712, -880 )
 z_index = -1
+flicker = false
 
 [node name="Lampost28" parent="Lights" instance=ExtResource( 23 )]
 position = Vector2( 8448, -880 )
@@ -711,6 +725,7 @@ z_index = -1
 [node name="Lampost29" parent="Lights" instance=ExtResource( 23 )]
 position = Vector2( 12880, -1264 )
 z_index = -1
+flicker = false
 
 [node name="Lampost30" parent="Lights" instance=ExtResource( 23 )]
 position = Vector2( 12880, -1072 )
@@ -719,6 +734,7 @@ z_index = -1
 [node name="Lampost31" parent="Lights" instance=ExtResource( 23 )]
 position = Vector2( 17312, -1072 )
 z_index = -1
+flicker = false
 
 [node name="Bossroom" type="Node" parent="."]
 

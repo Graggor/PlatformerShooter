@@ -4,7 +4,7 @@ export (NodePath) var boss
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	owner = boss
+	owner = get_node(boss)
 
 func _set_enabled():
 	$CollisionShape2D.disabled = false
