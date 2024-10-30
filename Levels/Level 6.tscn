@@ -21,7 +21,7 @@
 [ext_resource path="res://Levels/Components/Spike.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Sprites/World/Background/blackbackground.png" type="Texture" id=20]
 [ext_resource path="res://Levels/Components/Lampost.tscn" type="PackedScene" id=21]
-[ext_resource path="res://Levels/ToNextLevel.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Levels/Components/ToNextLevel.tscn" type="PackedScene" id=22]
 [ext_resource path="res://Levels/Components/ToNextLevelTrigger.tscn" type="PackedScene" id=23]
 [ext_resource path="res://Levels/Level.gd" type="Script" id=24]
 
